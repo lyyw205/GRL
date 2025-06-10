@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="text.css">
+    <link rel="stylesheet" href="section.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -53,17 +56,31 @@
         </section>
     </section>
 
-
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", startCountdown);
     </script>
 
     <!-- 🎥 [2] 소개 섹션 -->
-    <section id="intro" style="padding: 80px 20px; text-align: center;">
-    <h2>Who We Are</h2>
-    <p>도심 속 비밀스러운 연결. 음악, 술, 낯선 이, 그리고 새벽.</p>
+    <section class="content-wrapper">
+        <div class="content-inner">
+            <div class="text-block from-left">
+                <img src="img/무난한 일상에서 탈출하기!.png">
+            </div>
+            <div class="text-block from-left delay">
+                <img src="img/이번주는.png">
+            </div>
+            <div class="three-paragraphs">
+                <div class="text-block from-left"><img src="/img/‘일상’이라는 단어를 생각하면 ‘무엇’이 떠오르시나요_.png"></div>
+                <div class="text-block from-left delay"><img src="/img/게릴라는 ‘일상’하면 ‘즐거움’이 떠올라야한다고 생각합니다. 게릴라가 여러분의 일상에 ‘즐거움’을 더해드리겠습니다 _).png"></div>
+                <div class="text-block from-left delay2"><img src="/img/여러분들이 선택한 소중한 하루 후회하지 않게 준비하겠습니다..png"></div>
+            </div>
+            <div class="image-block from-right">
+                <img src="/img/host.png">
+            </div>
+        </div>
     </section>
+    <script src="script.js"></script>
 
     <!-- 🖼️ [3] 갤러리 or 영상 섹션 -->
     <div class="reels-wrapper">
@@ -75,12 +92,35 @@
     <script src="reels-slide.js"></script>
 
     <!-- 📍 [4] 다음 파티 안내 -->
-    <section id="next-event" style="padding: 80px 20px; background-color: #f9f9f9; text-align: center;">
-    <h2>다음 파티 안내</h2>
-    <p>📅 날짜: 6월 XX일<br>🕒 시간: 밤 9시 이후<br>📍 위치: 🧩 홍대 근처 어딘가</p>
-    <p>🎭 드레스코드: 미드나잇 블랙</p>
-    <a href="https://your-google-form-link" class="btn">참가 신청하기</a>
+    <section class="section-wrapper">
+        <div class="section-inner">
+            <div class="space-intro">
+            <!-- 블록 1 -->
+                <div class="text-h1-block anim-from-left"><img src="img/공간 소개.png"></div>
+                <div class="text-h3-block anim-from-left delay-1"><img src="/img/여자 화장실 분리되어있고 60명 이상 수용가능한 넓은 공간에서 재미난 파티로 기다릴게요!!.png"></div>
+            </div>
+            <!-- 블록 2 -->
+            <div class="notice-intro">
+                <div class="text-h1-block anim-from-left"><img src="/img/안내사항.png">
+                <div class="text-h2-block anim-from-left delay-1"><img src="/img/안주가제공되는.png"></div>
+                <div class="text-h3-block anim-from-left delay-2"><img src="/img/치킨,떡볶이.png"></div>
+
+                <!-- 블록 3 -->
+                <div class="text-h2-block anim-from-left"><img src="/img/반말모드.png"></div>
+                <div class="text-h3-block anim-from-left delay-1"><img src="/img/파티 시작부터는 모두 친해지기 위해 반말을 사용할 예정입니다 ! 나이, 직업을 공개하기 전까지는 반말로 친해져요 _).png"></div>
+
+                <!-- 블록 4 -->
+                <div class="text-h2-block anim-from-left"><img src="/img/선 지키기.png"></div>
+                <div class="text-h3-block anim-from-left delay-1"><img src="/img/지나친 음주.png"></div>
+
+                <!-- 블록 5 -->
+                <div class="text-h2-block anim-from-left"><img src="/img/인원은 최소.png"></div>
+                <div class="text-h3-block anim-from-left delay-1"><img src="/img/20명 미만.png"></div>
+            </div>
+        </div>
     </section>
+    <script src="section.js"></script>
+
 
     <!-- 👀 [5] 후기 & SNS 섹션 -->
     <section id="reviews" style="padding: 60px 20px;">
@@ -97,12 +137,6 @@
     <!-- 간단한 연락 폼은 나중에 추가 가능 -->
     </section>
 
-    <!-- 🦍 [7] 브랜드/캐릭터 소개 -->
-    <section id="brand" style="padding: 60px 20px; text-align: center;">
-    <h2>우리의 고릴라</h2>
-    <p>도심 속 파티문화의 새로운 해석. <br>고릴라는 자유, 야성, 연결을 상징합니다.</p>
-    <p>🎁 굿즈와 NFT, Coming Soon...</p>
-    </section>
     <script src="main.js"></script>
 </body>
 </html>

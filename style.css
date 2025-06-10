@@ -20,6 +20,7 @@ html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: #000;
 }
 
 #hero {
@@ -239,7 +240,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #d9d9d9;
+    background-color: #000000;
 }
 
 .event {
@@ -357,7 +358,7 @@ html, body {
 }
 
 .reels-track video {
-  height: 50vh;           /* ✅ 세로 최대 높이 */
+  height: 40vh;           /* ✅ 세로 최대 높이 */
   width: auto;            /* 가로는 자동 조정 */
   aspect-ratio: 9 / 16;   /* ✅ 릴스 비율 유지 */
   object-fit: cover;      /* ✅ 넘치는 부분 잘라냄 */
