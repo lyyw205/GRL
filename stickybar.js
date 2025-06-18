@@ -1,10 +1,11 @@
-const toggleBtn = document.getElementById("toggleTab");
-const expandTab = document.getElementById("expandTab");
+const stickyMenu = document.getElementById("stickyMenu");
 
-let isOpen = false;
+window.addEventListener("scroll", () => {
+  const scrollTrigger = 1100; // ✅ 몇 픽셀 이상 스크롤하면 나타날지 설정
 
-toggleBtn.addEventListener("click", () => {
-  isOpen = !isOpen;
-  expandTab.classList.toggle("active", isOpen);
-  toggleBtn.textContent = isOpen ? "▼" : "▲";  // ▼ 접기 / ▲ 열기
+  if (window.scrollY > scrollTrigger) {
+    stickyMenu.classList.add("visible");
+  } else {
+    stickyMenu.classList.remove("visible");
+  }
 });

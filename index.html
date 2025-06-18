@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="host.css">
     <link rel="stylesheet" href="notice.css">
     <link rel="stylesheet" href="stickybar.css">
+    <link rel="stylesheet" href="hero.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -24,22 +25,25 @@
 <body>
     <!-- 🖥️ [1] Hero 섹션 -->
     <section id="hero">
-        <div class="video-wrapper">
-            <video class="main-video" autoplay loop playsinline>
+        <div class="video-wrapper" id="videoWrapper">
+            <video id="heroVideo" class="main-video" preload="none" playsinline muted poster="/img/thumb.png" controlsList="nodownload">
                 <source src="video/메인영상.mp4">
             </video>
         </div>
-        <div class="main-video-overlay">
+
+        <!-- ✅ 처음에 보이는 텍스트/버튼 오버레이 -->
+        <div class="main-video-overlay" id="heroOverlay">
             <div class="hero-box">
-                <h1 class="hero-title">게릴라 파티 in 서울</h1>
-                <p class="hero-text">한밤의 초대, 당신만 몰랐던 순간</p>
-                <div class="hero-btn">
-                    <a href="#" class="mainbtn">신청하기</a>
-                    <a href="#" class="mainbtn">지난 영상 보기</a>
+                <h1 class="hero-title drop-bounce">게릴라 파티 in 서울</h1>
+                <p class="hero-text drop-bounce drop-delay-1">한밤의 초대, 당신만 몰랐던 순간</p>
+                <div class="hero-btn drop-bounce drop-delay-2">
+                    <a href="#" class="mainbtn" id="playVideoBtn">신청하기</a>
+                    <a href="#" class="mainbtn" id="watchVideoBtn">지난 영상 보기</a>
                 </div>
             </div>
         </div>
     </section>
+    <script src="hero.js"></script>
 
 
     <section class="event-section">
@@ -225,13 +229,13 @@
         <div class="notice-section-box2">
             <div class="notice-section-title">반말모드</div>
             <div class="notice-section-text">
-                파티 시작부터 한동안은 모두 친해지기 위해<br>반말을 사용할 예정입니다!<br><br>나이, 직업을 공개하기 전까지는 반말로 친해져봐요!
+                파티 시작부터 한동안은 모두 친해지기 위해<br>반말을 사용할 예정입니다!<br>나이, 직업을 공개하기 전까지는 반말로 친해져봐요!
             </div>
         </div>
         <div class="notice-section-box1">
             <div class="notice-section-title">선지키기</div>
             <div class="notice-section-text">
-                지나친 음주 / 스킨십 / 비속어 등으로 인해<br>다른 게스트가 불편함을 느낄 경우!! <br><br>구두경고 후 퇴장조치 될 수 있습니다.
+                지나친 음주 / 스킨십 / 비속어 등으로 인해<br>다른 게스트가 불편함을 느낄 경우!! <br>구두경고 후 퇴장조치 될 수 있습니다.
             </div>
         </div>
         <div class="notice-section-box2">
@@ -242,28 +246,28 @@
         </div>
     </section>
 
-    <!-- 확장탭 (위에 위치) -->
-    <div id="expandTab" class="expand-tab">
-        <a href="#contact" class="tab-btn">문의하기</a>
-        <a href="#map" class="tab-btn">오시는 길</a>
-    </div>
+    <div id="stickyMenu" class="sticky-menu">
+        <div class="top-bar">
+            <button class="main-btn"><span class="main-btn-text">파티 신청하기</span></button>
 
-    <!-- 고정된 바 (아래 고정) -->
-    <div class="sticky-bar-wrapper">
-        <div class="sticky-bar">
-            <button class="main-btn">파티 신청</button>
-            <button id="toggleTab" class="arrow-btn">▲</button>
+            <!-- 인스타 버튼 + 툴팁 -->
+            <div class="insta-btn-wrapper" a href="https://www.instagram.com/grl.party.official/" target="_blank" >
+                <div class="insta-btn">
+                    <img src="/img/insta-icon.png" alt="인스타그램" class="insta-icon">
+                </div>
+                <div class="insta-dm">DM문의</div>
+            </div>
         </div>
     </div>
 
+        <!-- 📌 확장 메뉴 항목 (현재 비활성화, 나중에 복구 가능) -->
+        <!--
+        <div class="menu-items">
+            <a href="#contact" class="tab-btn">문의하기</a>
+            <a href="#map" class="tab-btn">오시는 길</a>
+        </div>
+        -->
     <script src="stickybar.js"></script>
-
-    <!-- 📞 [6] 문의 or 연락처 섹션 -->
-    <section id="contact" style="padding: 60px 20px; background: #222; color: white; text-align: center;">
-    <h2>문의하기</h2>
-    <p>DM: <a href="https://instagram.com/yourprofile" style="color: #fff;">@yourprofile</a></p>
-    <!-- 간단한 연락 폼은 나중에 추가 가능 -->
-    </section>
 
     <script src="main.js"></script>
 </body>

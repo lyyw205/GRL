@@ -56,6 +56,12 @@ html, body {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.main-video-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-box {
