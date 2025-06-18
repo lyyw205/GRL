@@ -1,0 +1,84 @@
+/* ✅ [1] 확장 탭 - 문의하기 / 오시는 길 등이 포함된 위쪽 탭 영역 */
+.expand-tab {
+  position: fixed;               /* 화면 기준으로 고정 (화면 하단 기준으로 위치) */
+  bottom: 60px;                  /* ✅ 파티신청 바 위로 약간 떠 있도록 (바 높이와 맞춤) */
+  left: 50%;                     /* 가운데 정렬을 위해 50% 이동 후 */
+  transform: translateX(-50%);   /* 자기 넓이 기준 중앙 정렬 */
+  width: 100%;
+  max-width: 400px;              /* ✅ 최대 너비 제한 (반응형) */
+  background: #ff3366;           /* 파티신청 바와 같은 색으로 연결감 유지 */
+  border-radius: 12px 12px 0 0;  /* ✅ 상단만 둥글게 (하단은 파티바와 붙이므로 0) */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                     /* 버튼 간격 */
+  z-index: 998;                  /* ✅ 바보다 낮지만, 다른 요소보다 위로 */
+  transition: max-height 0.3s ease, padding 0.3s ease; /* 펼쳐지는 애니메이션 속도 */
+  overflow: hidden;              /* 펼칠 때 부드럽게 잘리도록 */
+  max-height: 0;                 /* ✅ 기본 숨겨진 상태 */
+  overflow: hidden;
+}
+
+/* ✅ 탭이 활성화(열림)일 때 높이 확장됨 */
+.expand-tab.active {
+  max-height: 300px;             /* 탭 열릴 때 보여지는 높이 (필요 시 더 크게) */
+  padding: 20px;
+}
+
+
+/* ✅ [2] 하단 고정 영역 - 파티신청 + 화살표 버튼을 포함하는 바 */
+.sticky-bar-wrapper {
+  position: fixed;               /* 화면 하단 고정 */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);   /* 가운데 정렬 */
+  width: 100%;
+  max-width: 400px;              /* ✅ 반응형 최대 넓이 제한 */
+  z-index: 999;                  /* ✅ 확장탭보다 위에 있도록 설정 */
+}
+
+/* ✅ 버튼 두 개 (파티신청 + 화살표)를 포함하는 실제 바 */
+.sticky-bar {
+  display: flex;                 /* 가로 배치 */
+  background: #ff3366;           /* 강렬한 파티색 */
+  border-radius: 12px 12px 0 0;  /* ✅ 위쪽 둥글게 (탭과 자연스럽게 이어짐) */
+  overflow: hidden;              /* 버튼 모양 잘려나가지 않게 */
+}
+
+
+/* ✅ [3] 좌측의 '파티 신청' 버튼 */
+.main-btn {
+  flex: 1;                       /* ✅ 남은 공간 전체 차지 (자동 넓이) */
+  padding: 14px 0;               /* 상하 여백으로 버튼 높이 조절 */
+  background: none;              /* 바 배경색 그대로 사용 */
+  color: white;                  /* 텍스트 색상 */
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ✅ [4] 우측의 화살표 버튼 (열기/접기) */
+.arrow-btn {
+  width: 48px;                   /* ✅ 고정 너비 (세로는 파티 버튼에 맞춰짐) */
+  background: none;              /* 배경 투명 (바 배경색 그대로) */
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;           /* 수직 가운데 정렬 */
+  justify-content: center;       /* 수평 가운데 정렬 */
+}
+
+
+/* ✅ [5] 확장 탭 안의 개별 버튼 (문의하기, 오시는 길 등) */
+.tab-btn {
+  background: white;             /* ✅ 개별 버튼은 하얀색 박스 */
+  color: #333;                   /* 텍스트 색상 */
+  padding: 14px;                 /* 버튼 높이 */
+  border-radius: 8px;            /* 약간 둥글게 */
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+}

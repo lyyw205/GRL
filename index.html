@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="event.css">
     <link rel="stylesheet" href="host.css">
     <link rel="stylesheet" href="notice.css">
+    <link rel="stylesheet" href="stickybar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -240,6 +241,22 @@
             </div>
         </div>
     </section>
+
+    <!-- 확장탭 (위에 위치) -->
+    <div id="expandTab" class="expand-tab">
+        <a href="#contact" class="tab-btn">문의하기</a>
+        <a href="#map" class="tab-btn">오시는 길</a>
+    </div>
+
+    <!-- 고정된 바 (아래 고정) -->
+    <div class="sticky-bar-wrapper">
+        <div class="sticky-bar">
+            <button class="main-btn">파티 신청</button>
+            <button id="toggleTab" class="arrow-btn">▲</button>
+        </div>
+    </div>
+
+    <script src="stickybar.js"></script>
 
     <!-- 📞 [6] 문의 or 연락처 섹션 -->
     <section id="contact" style="padding: 60px 20px; background: #222; color: white; text-align: center;">
