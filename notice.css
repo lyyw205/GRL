@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.notice-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 60px;
+}
+.notice-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* ✅ 가운데 정렬 */
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.notice-subtitle {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.0rem;
+  color: #A480FD;
+  line-height: 1.2;
+}
+.notice-title {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* 이벤트박스 */
+.notice-section-box1 {
+  background-color: #FFFBF1;
+  text-align: left;
+  width: 90%;
+  max-width: 350px;
+  padding: 35px 0 30px 20px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+.notice-section-box2 {
+  background-color: #FFF1FA;
+  text-align: left;
+  width: 90%;
+  max-width: 350px;
+  padding: 35px 0 30px 20px;
+  border-radius: 20px;
+}
+.notice-section-title {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+.notice-section-text {
+  font-family:'GangwonEduSaeeum_OTFMediumA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.notice-section-box3-text {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 40px 0 80px 0;
+}

@@ -20,63 +20,59 @@ html, body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #000;
+    background-color: #fff;
 }
 
 #hero {
-    position: relative;
-    width: 100vw;
-    overflow: hidden;
+  width: 100vw;
+  background: black;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
-
 .video-wrapper {
-    position: relative;
-    width: 100vw;
-    display: block;
+  width: 100%;
+  max-width: 500px;      /* ✅ 가로 최대 제한 */
+  margin: 0 auto;
+  position: relative;
 }
 
 .main-video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+  width: 100%;           /* ✅ 가로 기준으로 꽉 채움 */
+  height: auto;          /* ✅ 세로는 비율 유지 */
+  object-fit: contain;
+  display: block;
+  background: black;
 }
 
 
 .main-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    pointer-events: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 
 .hero-box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-    color: white;
-    pointer-events: auto;
+  color: white;
+  text-align: center;
+  pointer-events: auto; /* 버튼 클릭 가능하게 */
 }
 
 .hero-title {
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
 }
 
 .hero-text {
-    font-size: 1rem;
-    margin: 0 0 30px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 .hero-btn {
@@ -122,7 +118,7 @@ html, body {
   height: 400px;
   display: flex;
   flex-direction: column;
-  transform: translateX(35px);
+  transform: translateX(20px);
 }
 
 .party-date-wrap {
@@ -235,35 +231,47 @@ html, body {
 
 
 
-.event-slide {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000;
-}
-
-.event {
-    width: 50%;
-    max-width: 400px;
-    padding: 10px;
-}
-
-.event-text {
-    max-width: 400px;
-}
-
 .swiper {
-    width: 50%;
-    padding: 30px;
-    max-width: 380px;
-    transform: translateX(100px);
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* overflow: hidden; */
+  list-style: none;
+  width: 80%;
+  padding: 0;
+  z-index: 1;
+  display: block;
 }
-
-.imgevent {
-    width: 420px;
+.swiper-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F8FF;
+  padding-bottom: 60px;
 }
-
+.swiper-section-header {
+  background-color: #F5F8FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0 40px 0;
+}
+.swiper-section-text-subtitle {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.0rem;
+  color: #A480FD;
+  line-height: 1.2;
+}
+.swiper-section-text-title {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
 .swiper-footer-nav {
     display: flex;
     justify-content: center;

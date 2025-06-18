@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="intro.css">
     <link rel="stylesheet" href="text.css">
     <link rel="stylesheet" href="section.css">
+    <link rel="stylesheet" href="reels.css">
+    <link rel="stylesheet" href="event.css">
+    <link rel="stylesheet" href="host.css">
+    <link rel="stylesheet" href="notice.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -20,9 +24,10 @@
     <!-- 🖥️ [1] Hero 섹션 -->
     <section id="hero">
         <div class="video-wrapper">
-        <video class="main-video" autoplay loop playsinline>
-            <source src="video/5061405-hd_1920_1080_30fps.mp4">
-        </video>
+            <video class="main-video" autoplay loop playsinline>
+                <source src="video/메인영상.mp4">
+            </video>
+        </div>
         <div class="main-video-overlay">
             <div class="hero-box">
                 <h1 class="hero-title">게릴라 파티 in 서울</h1>
@@ -33,17 +38,44 @@
                 </div>
             </div>
         </div>
+    </section>
+
+
+    <section class="event-section">
+        <div class="event-header">
+            <div class="event-header-text">
+                <div class="event-subtitle">진행중</div>
+                <div class="event-title">EVENT</div>
+            </div>
+            <div class="event-header-img">
+                <img src="/img/확성기고릴라.png">
+            </div>
+        </div>
+        <div class="event-section-box1">
+            <div class="event-section-title">1. 사전신청 이벤트</div>
+            <div class="event-section-text">
+                파티 시작 하루 이상 미리 신청 시!<br>메인 파티, 애프터 파티 ‘각각’ 5천원 할인!!
+            </div>
+        </div>
+        <div class="event-section-box2">
+            <div class="event-section-title">2. 동시신청 이벤트</div>
+            <div class="event-section-text">
+                메인 파티, 애프터 파티 ‘한번에’ 신청 시<br>‘애프터 파티’ 추가 5천원 할인!!
+            </div>
+        </div>
+        <div class="event-section-box3">
+            <div class="event-section-box3-text">즉, 이벤트 두개 모두 참여 시 총 1.5만원 할인</div>
         </div>
     </section>
 
-    <section class="event-slide">
-        <section class="event">
-            <div class="event-text">
-                <img src="/img/event.png" class="imgevent">
-            </div>
-        </section>
-
         <!-- 📦 Swiper Section -->
+    <section class="swiper-section">
+        <div class="swiper-section-header">
+            <div class="swiper-section-text">
+                <div class="swiper-section-text-subtitle">모집중</div>
+                <div class="swiper-section-text-title">파티 리스트</div>
+            </div>
+        </div>
         <section class="swiper cardSwiper">
             <div class="swiper-wrapper" id="swiper-wrapper">
             <!-- JS에서 카드가 동적으로 삽입됨 -->
@@ -62,10 +94,64 @@
     </script>
 
     <!-- 🎥 [2] 소개 섹션 -->
-    <section class="content-wrapper">
+    <section class="intro-questions">
+        <div class="question1-wrapper">
+            <div class="question1">
+                <div class="intro-text-block from-left">
+                    <div class="question1-text1">Guerrilla Question 1.</div>
+                    <div class="question1-text2">
+                        <span class="question-text-highlight1">'일상'</span>
+                        <span class="question-text-normal1">이라는 단어를 생각하면</span><br>
+                        <span class="question-text-highlight2">'무엇'</span>
+                        <span class="question-text-normal2">이 떠오르나요?</span>
+                    </div>
+                </div>
+                <div class="question1-img1 intro-img-block from-right"><img src="/img/물음표고릴라.png"></div>
+            </div>
+        </div>
+        <div class="answer1-wrapper">
+            <div class="answer1">
+                <div class="intro-text-block from-left">
+                    <div class="answer1-text1">Guerrilla answer 1.</div>
+                    <div class="answer1-text2">
+                        <span class="answer-text-normal1">게릴라는</span>
+                        <span class="answer-text-highlight1">'일상'</span>
+                        <span class="answer-text-normal1">하면</span><br>
+                        <span class="answer-text-highlight2">'즐거움'</span>
+                        <span class="answer-text-normal1">이 떠올라야한다고</span><br>
+                        <span class="answer-text-normal1">생각합니다.</span>
+                    </div>
+                </div>
+                <div class="answer1-img1 intro-img-block from-right"><img src="/img/춤고릴라.png"></div>
+                <div class="answer1-text3 intro-text-block from-right">
+                    <span class="answer-text-normal1">게릴라가 여러분의</span>
+                    <span class="answer-text-highlight1">'일상'</span>
+                    <span class="answer-text-normal1">에</span><br>
+                    <span class="answer-text-highlight2">'즐거움'</span>
+                    <span class="answer-text-normal1">을 더해드리겠습니다.</span><br>
+                </div>
+            </div>
+            <div class="answer2">
+                <div class="answer2-box intro-img-block from-bottom delay2">
+                    <div class="answer2-text1">
+                        <span class="answer2-text-normal1">여러분이 선택한</span>
+                        <span class="answer2-text-highlight1">'소중한 하루'</span><br>
+                        <span class="answer2-text-normal1">후회하지 않게 준비하겠습니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="intro.js"></script>
+
+
+
+    <!-- 초기 인트로 -->
+    <!-- <section class="content-wrapper">
         <div class="content-inner">
             <div class="text-block from-left">
-                <img src="img/무난한 일상에서 탈출하기!.png">
+                <div class="questions-text1">Guerrilla Question 1.</div>
+                <div class="questions-text2">'일상'이라는 단어를 생각하면<br>'무엇'이 떠오르나요?</div>
             </div>
             <div class="text-block from-left delay">
                 <img src="img/이번주는.png">
@@ -80,54 +166,79 @@
             </div>
         </div>
     </section>
-    <script src="script.js"></script>
+    <script src="script.js"></script> -->
 
     <!-- 🖼️ [3] 갤러리 or 영상 섹션 -->
-    <div class="reels-wrapper">
-        <div class="reels-track" id="reelsTrack">
-        <!-- 동적으로 비디오 삽입됨 -->
+    <div class="reels-section">
+        <div class="reels-header">
+            <div class="reels-subtitle">게릴라</div>
+            <div class="reels-title">HISTORY</div>
+        </div>
+
+        <!-- ✅ 중앙 기준 제공할 컨테이너 추가 -->
+        <div class="reels-container">
+            <div class="reels-track" id="reelsTrack">
+            <!-- 동적으로 비디오 삽입 -->
+            </div>
         </div>
     </div>
 
     <script src="reels-slide.js"></script>
 
-    <!-- 📍 [4] 다음 파티 안내 -->
-    <section class="section-wrapper">
-        <div class="section-inner">
-            <div class="space-intro">
-            <!-- 블록 1 -->
-                <div class="text-h1-block anim-from-left"><img src="img/공간 소개.png"></div>
-                <div class="text-h3-block anim-from-left delay-1"><img src="/img/여자 화장실 분리되어있고 60명 이상 수용가능한 넓은 공간에서 재미난 파티로 기다릴게요!!.png"></div>
-            </div>
-            <!-- 블록 2 -->
-            <div class="notice-intro">
-                <div class="text-h1-block anim-from-left"><img src="/img/안내사항.png">
-                <div class="text-h2-block anim-from-left delay-1"><img src="/img/안주가제공되는.png"></div>
-                <div class="text-h3-block anim-from-left delay-2"><img src="/img/치킨,떡볶이.png"></div>
+    <!-- 호스트소개 -->
+    <div class="host-section">
+        <div class="host-header">
+            <div class="host-subtitle">게릴라</div>
+            <div class="host-title">호스트소개</div>
+        </div>
+        <div>
+            <img class="host-image" src="/img/host.png">
+        </div>
+    </div>
 
-                <!-- 블록 3 -->
-                <div class="text-h2-block anim-from-left"><img src="/img/반말모드.png"></div>
-                <div class="text-h3-block anim-from-left delay-1"><img src="/img/파티 시작부터는 모두 친해지기 위해 반말을 사용할 예정입니다 ! 나이, 직업을 공개하기 전까지는 반말로 친해져요 _).png"></div>
+    <!-- 장소소개 -->
+    <div class="location-section">
+        <div class="location-header">
+            <div class="location-subtitle">근데 어디서?</div>
+            <div class="location-title">게릴라 파티장 소개</div>
+        </div>
+        <div >
+            <img class="location-image" src="/img/host.png">
+        </div>
+    </div>
 
-                <!-- 블록 4 -->
-                <div class="text-h2-block anim-from-left"><img src="/img/선 지키기.png"></div>
-                <div class="text-h3-block anim-from-left delay-1"><img src="/img/지나친 음주.png"></div>
-
-                <!-- 블록 5 -->
-                <div class="text-h2-block anim-from-left"><img src="/img/인원은 최소.png"></div>
-                <div class="text-h3-block anim-from-left delay-1"><img src="/img/20명 미만.png"></div>
+    <!-- 안내사항 -->
+    <section class="notice-section">
+        <div class="notice-header">
+            <div class="notice-header-text">
+                <div class="notice-subtitle">꼭 읽어주세요!</div>
+                <div class="notice-title">게릴라 안내사항</div>
             </div>
         </div>
-    </section>
-    <script src="section.js"></script>
-
-
-    <!-- 👀 [5] 후기 & SNS 섹션 -->
-    <section id="reviews" style="padding: 60px 20px;">
-    <h2 style="text-align:center;">후기 & SNS</h2>
-    <!-- 나중에 인스타 피드 embed 코드 삽입 가능 -->
-    <p style="text-align:center;">#게릴라파티 #한밤의초대</p>
-    <div id="instafeed">인스타 후기 들어갈 자리</div>
+        <div class="notice-section-box1">
+            <div class="notice-section-title">안주가 제공되는 컨셉파티</div>
+            <div class="notice-section-text">
+                치킨, 떡볶이, 감튀, 아이스크림 등<br>다양한 핑거푸드가 제공될 예정입니다!
+            </div>
+        </div>
+        <div class="notice-section-box2">
+            <div class="notice-section-title">반말모드</div>
+            <div class="notice-section-text">
+                파티 시작부터 한동안은 모두 친해지기 위해<br>반말을 사용할 예정입니다!<br><br>나이, 직업을 공개하기 전까지는 반말로 친해져봐요!
+            </div>
+        </div>
+        <div class="notice-section-box1">
+            <div class="notice-section-title">선지키기</div>
+            <div class="notice-section-text">
+                지나친 음주 / 스킨십 / 비속어 등으로 인해<br>다른 게스트가 불편함을 느낄 경우!! <br><br>구두경고 후 퇴장조치 될 수 있습니다.
+            </div>
+        </div>
+        <div class="notice-section-box2">
+            <div class="notice-section-title">인원은!</div>
+            <div class="notice-section-text">
+                인원은 최소 20명에서 최대 70명!<br>20명 미만으로 모였을 시에는 전액 환불처리 됩니다!
+            </div>
+        </div>
     </section>
 
     <!-- 📞 [6] 문의 or 연락처 섹션 -->

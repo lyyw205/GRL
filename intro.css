@@ -1,17 +1,149 @@
-
-
-.intro {
-  background-color: black;
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.head-text {
-  max-width: 1000px;
+@font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.head-text-1 {
-  width: 40%;
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.head-text-2 {
-  width: 60%;
+
+.intro-questions {
+  display: flex;
+  flex-direction: column;
 }
+.question1-wrapper {
+  background-color: #FDF3F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer1-wrapper {
+  background-color: #F5F5FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.question1,
+.answer1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  width: 90%;
+  max-width: 500px;
+}
+.question1-text1,
+.answer1-text1 {
+  color: #B890FE;
+  font-weight: bold;
+  font-size: 0.75em;
+  padding: 60px 0 10px 0;
+}
+.question1-img1 img {
+  width: 150px;
+  max-width: 80%;
+}
+.question1-img1 {
+  text-align: right;
+  padding: 30px 0 50px 0;
+}
+.answer1-img1 img {
+  width: 170px;
+  max-width: 80%;
+}
+.answer1-img1 {
+  text-align: right;
+  padding: 55px 0 20px 0;
+}
+.answer1-text3 {
+  text-align: right;
+}
+.answer2-box {
+  background: #FBE5E3;
+  padding: 35px 36px 30px ;
+  border-radius: 10px;
+  border: 1px solid #F6CBC7;
+  margin: 80px 0 100px 0;
+}
+
+/* qusertion 텍스트 크기 */
+.question-text-highlight1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.7em;
+  color: #FF0ACE;
+  line-height: 1.0;
+}
+.question-text-highlight2 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.7em;
+  color: #0FBDFF;
+  line-height: 1.0;
+}
+.question-text-normal1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.5em;
+}
+.question-text-normal2 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.5em;
+}
+
+/* answer 텍스트 크기 */
+.answer-text-highlight1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.38em;
+  color: #FF0ACE;
+  line-height: 1.2;
+}
+.answer-text-highlight2 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.38em;
+  color: #0FBDFF;
+  line-height: 1.2;
+}
+.answer-text-normal1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.25em;
+}
+.answer-text-normal2 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.25em;
+}
+.answer2-text-highlight1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.38em;
+  color: #FF6759;
+  line-height: 1.2;
+}
+.answer2-text-normal1 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.25em;
+}
+
+
+/* 텍스트 애니메이션 */
+.intro-text-block,
+.intro-img-block {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.from-left  { transform: translateX(-100px); }
+.from-right { transform: translateX(100px); }
+.from-bottom { transform: translateY(50px); }
+
+.delay  { transition-delay: 0.2s; }
+.delay2 { transition-delay: 0.4s; }
