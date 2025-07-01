@@ -72,10 +72,10 @@
   text-align: right;
 }
 .answer2-box {
-  background: #FBE5E3;
+  background: #e1e1f7;
   padding: 35px 36px 30px ;
   border-radius: 10px;
-  border: 1px solid #F6CBC7;
+  border: 1px solid #cbcbec;
   margin: 80px 0 100px 0;
 }
 
@@ -125,7 +125,7 @@
 .answer2-text-highlight1 {
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
   font-size: 1.38em;
-  color: #FF6759;
+  color: #7d7ddb;
   line-height: 1.2;
 }
 .answer2-text-normal1 {

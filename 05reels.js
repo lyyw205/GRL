@@ -52,7 +52,7 @@ function renderReelsVideos() {
   if (firstVideo) {
     firstVideo.onloadedmetadata = () => {
       updateReelsPosition();
-      playCenterVideo();
+      // playCenterVideo();
     };
   }
 }
@@ -151,8 +151,26 @@ reelsTrack.addEventListener("touchend", (e) => {
   }
 
   updateReelsPosition();  // 중앙 정렬로 스냅
-  playCenterVideo();      // 새 비디오 재생
+  // playCenterVideo();      // 새 비디오 재생
 });
+// 2. intersection 감시
+const reelsSection = document.getElementById("reelsSection");
+if (reelsSection) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasStartedReels) {
+        hasStartedReels = true;
+        console.log("🎬 리일 화면 진입: 재생 시작");
+        playCenterVideo(); // ⏯️ 첫 비디오 재생 시작
+        observer.disconnect(); // 감시 해제
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
+
+  observer.observe(reelsSection);
+}
 
 // 반응형
 window.addEventListener("resize", () => {

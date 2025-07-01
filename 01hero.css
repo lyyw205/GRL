@@ -118,6 +118,11 @@
   margin-top: 80px;
 }
 
+.party-apply-btn-only {
+  text-decoration: none;
+  color: #fff;
+}
+
 
 .boingInUp {
   -webkit-animation-name: boingInUp;
