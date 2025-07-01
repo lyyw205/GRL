@@ -54,7 +54,6 @@
   text-align: left;
   width: 90%;
   max-width: 450px;
-  padding: 35px 0 30px 40px;
   border-radius: 20px;
   margin: 20px 0;
 }
@@ -63,7 +62,6 @@
   text-align: left;
   width: 90%;
   max-width: 450px;
-  padding: 35px 0 30px 40px;
   border-radius: 20px;
 }
 .notice-section-title {
@@ -71,11 +69,13 @@
   font-size: 1.3rem;
   line-height: 1.2;
   margin-bottom: 5px;
+  padding: 35px 0 0 40px;
 }
 .notice-section-text {
   font-family:'GangwonEduSaeeum_OTFMediumA', "Jua", "Black Han Sans", sans-serif;
   font-size: 1.3rem;
   line-height: 1.2;
+  padding: 0 0 35px 40px;
 }
 .notice-section-box3-text {
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;

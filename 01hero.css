@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#hero {
+  width: 100vw;
+  background: black;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.video-wrapper {
+  width: 100%;
+  max-width: 500px;      /* ✅ 가로 최대 제한 */
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-video {
+  width: 100%;           /* ✅ 가로 기준으로 꽉 채움 */
+  height: auto;          /* ✅ 세로는 비율 유지 */
+  object-fit: contain;
+  display: block;
+  background: black;
+}
+
+
+.main-video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.main-video-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-box {
+  color: white;
+  text-align: center;
+  pointer-events: auto; /* 버튼 클릭 가능하게 */
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 15px 0;
+  font-family: 'GangwonEduPowerExtraBoldA', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-text {
+  font-size: 1.3rem;
+  margin-bottom: 0px;
+  font-family: 'GangwonEdu_OTFBoldA', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0 0 0;
+}
+
+.mainbtn {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 15px;
+    color: #ffffff;
+    background-color: transparent;
+    padding: 5px 20px;
+}
+
+.mainbtn:hover {
+    border-radius: 20px;
+    padding: 5px 20px;
+    background-color: white;
+    color: black;
+}
+
+.party-apply-btn {
+  font-family: 'GangwonEduPowerExtraBoldA', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #fff;
+  padding: 15px 30px 6px 30px;
+  margin-top: 80px;
+}
+
+
+.boingInUp {
+  -webkit-animation-name: boingInUp;
+  animation-name: boingInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes boingInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(-90deg);
+    transform: perspective(800px) rotateX(-90deg);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(50deg);
+    transform: perspective(800px) rotateX(50deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(0deg);
+    transform: perspective(800px) rotateX(0deg);
+  }
+}
+
+@keyframes boingInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(-90deg);
+    transform: perspective(800px) rotateX(-90deg);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(50deg);
+    transform: perspective(800px) rotateX(50deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(800px) rotateX(0deg);
+    transform: perspective(800px) rotateX(0deg);
+  }
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1.0s;
+}
+.delay-3 {
+  animation-delay: 1.5s;
+}
