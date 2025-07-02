@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="06host.css">
     <link rel="stylesheet" href="07notice.css">
     <link rel="stylesheet" href="10stickybar.css">
+    <link rel="stylesheet" href="slide2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -196,6 +197,59 @@
 
     <script src="05reels.js"></script>
 
+
+
+    <div class="shorts-swiper">
+        <div class="shorts-section">
+            <div class="shorts-header">
+                <div class="shorts-subtitle">게릴라</div>
+                <div class="shorts-title">HISTORY</div>
+            </div>
+        </div>
+
+        <!-- 4. Swiper HTML 구조 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 1 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <!-- 여기에 첫 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                        <iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 2 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <!-- 여기에 두 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                        <iframe id="player2" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 3 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player3" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 4 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player4" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드를 더 추가하려면 위 reels-swiper-slide 블록을 복사해서 붙여넣으세요. -->
+            </div>
+            <!-- 좌/우 버튼 -->
+            <div class="reels-swiper-button-next"></div>
+            <div class="reels-swiper-button-prev"></div>
+            <!-- 페이지네이션 (점) -->
+            <div class="reels-swiper-pagination"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="slide2.js"></script>
+
+
+
     <!-- 호스트소개 -->
     <div class="host-section">
         <div class="host-header">
@@ -254,7 +308,7 @@
 
     <div id="stickyMenu" class="sticky-menu">
         <div class="top-bar">
-            <button class="main-btn"><span class="main-btn-text">파티 신청하기</span></button>
+            <button class="main-btn"><a href="https://tally.so/r/mVdZaa"><span class="main-btn-text">파티 신청하기</span></a></button>
 
             <!-- 인스타 버튼 + 툴팁 -->
             <div class="insta-btn-wrapper" a href="https://www.instagram.com/grl.party.official/" target="_blank" >
