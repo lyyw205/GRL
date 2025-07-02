@@ -32,11 +32,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #333; /* 다른 느낌을 주기 위해 배경색 변경 */
+    background-color: #F5F8FF; /* 다른 느낌을 주기 위해 배경색 변경 */
     margin: 0;
 }
 
 .hotclip-section {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +45,7 @@
     align-items: center;
     width: 100%;
     padding: 80px 0 0 0;
-    background-color: #333;
+    background-color: #F5F8FF;
 }
 
 .hotclip-header {
@@ -54,7 +55,7 @@
 .hotclip-subtitle {
     font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
     font-size: 1.0rem;
-    color: #ffc107; /* 포인트 컬러 변경 */
+    color: #A480FD;
     line-height: 1.2;
 }
 
@@ -62,7 +63,6 @@
     font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 1.2;
-    color: #fff; /* 글자색 변경 */
 }
 
 /* Swiper 컨테이너 */
@@ -114,11 +114,11 @@
 }
 
 .hotclip-swiper-pagination .swiper-pagination-bullet {
-    background-color: #fff;
+    background-color: #444444;
 }
 
 .hotclip-swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #ffc107;
+    background-color: #7c36ff;
 }
 
 /* 크기/투명도 효과 (hotclipSwiper 전용) */
