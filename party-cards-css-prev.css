@@ -1,64 +1,15 @@
-/*
- * =======================================================
- *  파티 카드 슬라이더 스타일 (새로운 쇼케이스 디자인)
- * =======================================================
- */
-
-/* 1. 슬라이더 전체 컨테이너 설정 */
-.swiper-section {
-  background-color: #F5F8FF;
-  padding: 60px 0;
-  overflow: hidden; /* 섹션 바깥으로 튀어나가는 것을 방지 */
-}
-
-.swiper-section-header {
-  /* 기존 스타일 유지 */
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* [핵심] Swiper 컨테이너가 양옆 슬라이드를 보여주도록 설정 */
-.cardSwiper.swiper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: visible; /* 자식 요소(슬라이드)가 밖으로 나가도 보이게 함 */
-}
-
-/* 2. 개별 슬라이드 및 카드 스타일 */
-.cardSwiper .swiper-slide {
-  flex-shrink: 0;
-  /* [핵심] 부드러운 애니메이션 효과 */
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  height: 420px; /* 모든 카드의 높이를 통일 */
-  display: flex; /* 내부 카드를 정렬하기 위함 */
-  justify-content: center;
-  align-items: center;
-}
-
-/* [핵심] 활성 슬라이드가 아닐 때만 축소 및 반투명 효과 적용 */
-.cardSwiper .swiper-slide:not(.swiper-slide-active) {
-  transform: scale(0.85);
-  opacity: 0.7;
-}
-
 .party-card {
-  /* [핵심] 고정 width, height 제거! */
-  width: 100%;
-  height: 100%;
-  max-width: 280px; /* 카드의 최대 너비는 유지 */
-  
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 20px 15px; /* 좌우 패딩을 조금 줄임 */
-  box-sizing: border-box;
-  
+  padding: 20px;
+  width: 270px;
+  height: 400px;
   display: flex;
   flex-direction: column;
+  transform: translateX(20px);
 }
 
-/* 3. 카드 내부 요소 크기 조정 (유연한 레이아웃을 위함) */
 .party-date-wrap {
   display: flex;
   align-items: center;
@@ -79,6 +30,7 @@
   font-family: 'GangwonEdu_OTFBoldA', "Gamja Flower", sans-serif;
   font-weight: 400;
   font-style: normal;
+
 }
 
 .party-date {
@@ -90,14 +42,16 @@
   font-weight: 400;
 }
 
+
 .party-count {
   font-family:'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
   font-size: 21px;
   font-weight: normal;
   color: #000000;
-  margin: 30px 0 5px 0;
+  margin: 40px 0 5px 0;
   line-height: 1.0;
 }
+
 .party-sex {
   font-family: 'GangwonEdu_OTFBoldA', "Jua", Arial, Helvetica, sans-serif;
   font-size: 21px;
@@ -108,7 +62,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 25px;
+  margin-top: 32px;
   margin-bottom: 10px;
 }
 
@@ -124,11 +78,9 @@
 }
 
 .divider {
-    height: 0; /* 높이는 0으로 */
-    border: none;
-    border-bottom: 1px solid #e0e0e0; /* 테두리로 선을 그림 */
-    padding-top: 10px; /* 위쪽 여백 */
-    margin-bottom: 10px; /* 아래쪽 여백 */
+  height: 1px;
+  background-color: #dadada;
+  margin: 10px 0;
 }
 
 .timer-label {
@@ -150,7 +102,6 @@
   line-height: 1.0;
 }
 
-
 .cta-button {
   font-family: 'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -165,35 +116,22 @@
 }
 
 
-/* 4. 네비게이션 및 페이지네이션 스타일 */
-.swiper-footer-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 40px;
+
+
+
+
+.cardSwiper.swiper {
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* overflow: hidden; */
+  list-style: none;
+  width: 80%;
+  padding: 0;
+  z-index: 1;
+  display: block;
 }
-
-/* [수정] 페이지네이션에만 스타일이 적용되도록 명확히 지정 */
-.cardSwiper .swiper-pagination {
-    position: static; /* 기본 위치로 변경 */
-    width: auto;
-}
-
-.cardSwiper .swiper-pagination-bullet {
-    background: #ccc;
-}
-
-.cardSwiper .swiper-pagination-bullet-active {
-    background: #7278D7;
-}
-
-.cardSwiper.swiper-button-next,
-.cardSwiper.swiper-button-prev {
-  display: none;
-}
-
-
 .swiper-section {
   display: flex;
   flex-direction: column;
@@ -210,6 +148,7 @@
   text-align: center;
   align-items: center;
   width: 100%;
+  padding: 60px 0 40px 0;
 }
 .swiper-section-text-subtitle {
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
@@ -221,4 +160,81 @@
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
   font-size: 1.5rem;
   line-height: 1.2;
+}
+.swiper-footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
+    padding-bottom: 16px;
+}
+
+.cardSwiper.swiper-pagination {
+    gap: 6px;
+}
+
+.cardSwiper.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    opacity: 1;
+    transition: background 0.3s;
+}
+
+.cardSwiper.swiper-pagination-bullet-active {
+    background: #7278D7;
+}
+
+.cardSwiper.swiper-slide {
+    width: 100%;
+    max-width: 360px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.cardSwiper.swiper-button-next,
+.cardSwiper.swiper-button-prev {
+  display: none;
+}
+
+
+
+/* 하단 작은 화살표 */
+.small-arrow {
+  display: none;
+}
+
+
+
+.cardSwiper.swiper-slide {
+    width: 100%;
+    max-width: 360px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.cardSwiper.swiper-slide-active {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.swiper-cardSwiper {
+    width: 400px;
+}
+
+.cardSwiper {
+    padding: 0 80px; /* ✅ 좌우 여백을 80px로 제한 */
+    box-sizing: border-box;
+}
+
+.swiper.cardSwiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+    margin: 0;
+}
+
+/* Swiper 기본 화살표 숨기기 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
 }

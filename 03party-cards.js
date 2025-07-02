@@ -81,34 +81,48 @@ function startCountdown() {
 }
 
 // ✅ Swiper 초기화
+// ✅ Swiper 초기화 (수정된 버전)
 function initSwiper() {
+  // 기존에 Swiper 인스턴스가 있다면 파괴하여 메모리 누수 방지
+  if (document.querySelector('.cardSwiper').swiper) {
+    document.querySelector('.cardSwiper').swiper.destroy(true, true);
+  }
+
   new Swiper(".cardSwiper", {
-    slidesPerView: "auto",
-    spaceBetween: 16,
-    centeredSlides: false,
-    loop: false,
+    // [핵심] PC 화면에서는 2.5개를 보여주어 양옆이 보이게 함
+    slidesPerView: 2.5,
+    // [핵심] 활성 슬라이드를 항상 가운데로 정렬
+    centeredSlides: true,
+    // 카드 사이의 간격
+    spaceBetween: 20,
+    // [핵심] 무한 루프는 이 디자인과 잘 어울립니다.
+    loop: true,
+    // 마우스 커서를 잡는 모양으로 변경
     grabCursor: true,
+
+    // 페이지네이션 설정
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    
+    // 네비게이션(좌우 화살표) 설정 - 필요하다면 small-arrow 대신 보이게 할 수 있습니다.
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
     },
 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      type: "bullets"
-    },
-
+    // [핵심] 반응형 설정
     breakpoints: {
+      // 모바일 화면 (768px 미만)
       0: {
-        slidesPerView: 1,
-        centeredSlides: false,
-        spaceBetween: 0
+        slidesPerView: 1.5, // 모바일에서는 1.2개만 보여줌
+        spaceBetween: 10,
       },
+      // 태블릿/데스크탑 화면 (768px 이상)
       768: {
-        slidesPerView: "auto",
-        centeredSlides: false,
-        spaceBetween: 16
+        slidesPerView: 3,
+        spaceBetween: 20,
       }
     }
   });

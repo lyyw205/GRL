@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="07notice.css">
     <link rel="stylesheet" href="10stickybar.css">
     <link rel="stylesheet" href="slide2.css">
+    <link rel="stylesheet" href="hotclip.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -93,9 +94,7 @@
             <!-- JS에서 카드가 동적으로 삽입됨 -->
             </div>
             <div class="swiper-footer-nav">
-                <div class="swiper-button-prev small-arrow"></div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-next small-arrow"></div>
             </div>
         </section>
     </section>
@@ -104,6 +103,98 @@
     <script>
         document.addEventListener("DOMContentLoaded", startCountdown);
     </script>
+
+    <div class="shorts-swiper">
+        <div class="shorts-section">
+            <div class="shorts-header">
+                <div class="shorts-subtitle">게릴라</div>
+                <div class="shorts-title">HISTORY</div>
+            </div>
+        </div>
+
+        <!-- 4. Swiper HTML 구조 -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 1 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <!-- 여기에 첫 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                        <iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 2 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <!-- 여기에 두 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                        <iframe id="player2" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 3 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player3" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드 4 -->
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player4" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 슬라이드를 더 추가하려면 위 reels-swiper-slide 블록을 복사해서 붙여넣으세요. -->
+            </div>
+            <!-- 좌/우 버튼 -->
+            <div class="reels-swiper-button-next"></div>
+            <div class="reels-swiper-button-prev"></div>
+            <!-- 페이지네이션 (점) -->
+            <div class="reels-swiper-pagination"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="slide2.js"></script>
+
+
+    <!-- ======================================================= -->
+    <!--             새로운 핫클립 슬라이더 섹션                  -->
+    <!-- ======================================================= -->
+    <div class="hotclip-swiper">
+        <div class="hotclip-section">
+            <div class="hotclip-header">
+                <div class="hotclip-subtitle">주간 BEST</div>
+                <div class="hotclip-title">핫클립</div>
+            </div>
+        </div>
+
+        <!-- Swiper HTML 구조 (클래스명 변경) -->
+        <div class="swiper hotclipSwiper">
+            <div class="swiper-wrapper">
+                <!-- 핫클립 슬라이드 1 (새로운 영상과 ID로 교체) -->
+                <div class="swiper-slide hotclip-video-size">
+                    <div class="iframe-container">
+                        <iframe id="hotclip-player1" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- 핫클립 슬라이드 2 -->
+                <div class="swiper-slide hotclip-video-size">
+                    <div class="iframe-container">
+                        <iframe id="hotclip-player2" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- ... 필요에 따라 슬라이드를 더 추가 ... -->
+            </div>
+            <!-- 좌/우 버튼 (클래스명 변경) -->
+            <div class="hotclip-swiper-button-next"></div>
+            <div class="hotclip-swiper-button-prev"></div>
+            <!-- 페이지네이션 (점) (클래스명 변경) -->
+            <div class="hotclip-swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- 기존 스크립트 로드 부분은 그대로 둡니다. -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+
+    <!-- [중요] 핫클립용 JS 파일을 새로 만들거나 인라인 스크립트로 추가합니다. -->
+    <script src="hotclip.js"></script>
 
     <!-- 🎥 [2] 소개 섹션 -->
     <section class="intro-questions">
@@ -180,73 +271,18 @@
     </section>
     <script src="script.js"></script> -->
 
-    <!-- 🖼️ [3] 갤러리 or 영상 섹션 -->
-    <div class="reels-section">
+    <!-- 기존 릴스 영역 -->
+    <!-- <div class="reels-section">
         <div class="reels-header">
             <div class="reels-subtitle">게릴라</div>
             <div class="reels-title">HISTORY</div>
         </div>
-
-        <!-- ✅ 중앙 기준 제공할 컨테이너 추가 -->
         <div class="reels-container">
             <div class="reels-track" id="reelsTrack">
-            <!-- 동적으로 비디오 삽입 -->
             </div>
         </div>
     </div>
-
-    <script src="05reels.js"></script>
-
-
-
-    <div class="shorts-swiper">
-        <div class="shorts-section">
-            <div class="shorts-header">
-                <div class="shorts-subtitle">게릴라</div>
-                <div class="shorts-title">HISTORY</div>
-            </div>
-        </div>
-
-        <!-- 4. Swiper HTML 구조 -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- 슬라이드 1 -->
-                <div class="swiper-slide shorts-video-size">
-                    <div class="iframe-container">
-                        <!-- 여기에 첫 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
-                        <iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- 슬라이드 2 -->
-                <div class="swiper-slide shorts-video-size">
-                    <div class="iframe-container">
-                        <!-- 여기에 두 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
-                        <iframe id="player2" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- 슬라이드 3 -->
-                <div class="swiper-slide shorts-video-size">
-                    <div class="iframe-container">
-                        <iframe id="player3" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- 슬라이드 4 -->
-                <div class="swiper-slide shorts-video-size">
-                    <div class="iframe-container">
-                        <iframe id="player4" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <!-- 슬라이드를 더 추가하려면 위 reels-swiper-slide 블록을 복사해서 붙여넣으세요. -->
-            </div>
-            <!-- 좌/우 버튼 -->
-            <div class="reels-swiper-button-next"></div>
-            <div class="reels-swiper-button-prev"></div>
-            <!-- 페이지네이션 (점) -->
-            <div class="reels-swiper-pagination"></div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="slide2.js"></script>
+    <script src="05reels.js"></script> -->
 
 
 

@@ -1,0 +1,137 @@
+/* ✅ 폰트 등록 */
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * =======================================================
+ *   핫클립 슬라이더 전용 스타일 (기존 코드와 충돌 없음)
+ * =======================================================
+ */
+
+.hotclip-swiper {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333; /* 다른 느낌을 주기 위해 배경색 변경 */
+    margin: 0;
+}
+
+.hotclip-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 80px 0 0 0;
+    background-color: #333;
+}
+
+.hotclip-header {
+    margin-bottom: 30px;
+}
+
+.hotclip-subtitle {
+    font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+    font-size: 1.0rem;
+    color: #ffc107; /* 포인트 컬러 변경 */
+    line-height: 1.2;
+}
+
+.hotclip-title {
+    font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #fff; /* 글자색 변경 */
+}
+
+/* Swiper 컨테이너 */
+.swiper.hotclipSwiper {
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 80px;
+}
+
+.hotclipSwiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotclip-video-size {
+    position: relative;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* 오버레이 (hotclipSwiper 내부에서만 작동) */
+.hotclipSwiper .slide-click-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 10; background: transparent; cursor: pointer; display: none;
+}
+
+.hotclipSwiper .swiper-slide:not(.swiper-slide-active) .slide-click-overlay {
+    display: block;
+}
+
+/* iframe 컨테이너 (스타일 재사용) */
+.hotclipSwiper .iframe-container {
+    position: relative; width: 100%; aspect-ratio: 9 / 16; max-width: 315px;
+    margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border-radius: 12px;
+    overflow: hidden; max-height: 75vh;
+}
+
+.hotclipSwiper .iframe-container iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+}
+
+/* 페이지네이션 (hotclipSwiper 전용) */
+.hotclipSwiper .swiper-pagination-bullets {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.hotclip-swiper-pagination .swiper-pagination-bullet {
+    background-color: #fff;
+}
+
+.hotclip-swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ffc107;
+}
+
+/* 크기/투명도 효과 (hotclipSwiper 전용) */
+.hotclipSwiper .swiper-slide.hotclip-video-size {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hotclipSwiper .swiper-slide.hotclip-video-size:not(.swiper-slide-active) {
+    transform: scale(0.85);
+    opacity: 0.6;
+}
+
+.hotclipSwiper .swiper-slide-active.hotclip-video-size {
+    transform: scale(1);
+    opacity: 1;
+}
