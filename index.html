@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="01hero.css">
     <link rel="stylesheet" href="02event.css">
@@ -25,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <title>Document</title>
+    <title>GRL</title>
 </head>
 <body>
     <!-- 🖥️ [1] Hero 섹션 -->
@@ -44,20 +45,17 @@
         <!-- ✅ 처음에 보이는 텍스트/버튼 오버레이 (이 부분은 변경 없음) -->
         <div class="main-video-overlay" id="heroOverlay">
             <div class="hero-box">
-                <h1 class="hero-text boingInUp delay-0">홍대에 숨은 도파민 파티가 있다고?</h1>
-                <p class="hero-title boingInUp delay-1">게릴라가 궁금해?</p>
-                <div class="hero-btn boingInUp delay-2">
+                <h1 class="hero-text">홍대에 숨은 도파민 파티가 있다고?</h1>
+                <p class="hero-title">게릴라가 궁금해?</p>
+                <div class="hero-btn">
                     <a href="#" class="mainbtn" id="watchVideoBtn">궁금하면 클릭 >></a>
                 </div>
-                <button class="party-apply-btn boingInUp delay-2">
+                <button class="party-apply-btn">
                     <a href="https://tally.so/r/mVdZaa" class="party-apply-btn-only">파티 신청하기</a>
                 </button>
             </div>
         </div>
     </section>
-
-    <!-- 3. JS 파일을 연결합니다. -->
-    <script src="01hero.js"></script>
 
 
     <section class="event-section">
@@ -106,9 +104,6 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", startCountdown);
-    </script>
 
     <div class="shorts-swiper">
         <div class="shorts-section">
@@ -125,26 +120,26 @@
                 <div class="swiper-slide shorts-video-size">
                     <div class="iframe-container">
                         <!-- 여기에 첫 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
-                        <iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="player1" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- 슬라이드 2 -->
                 <div class="swiper-slide shorts-video-size">
                     <div class="iframe-container">
                         <!-- 여기에 두 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
-                        <iframe id="player2" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="player2" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- 슬라이드 3 -->
                 <div class="swiper-slide shorts-video-size">
                     <div class="iframe-container">
-                        <iframe id="player3" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="player3" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- 슬라이드 4 -->
                 <div class="swiper-slide shorts-video-size">
                     <div class="iframe-container">
-                        <iframe id="player4" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="player4" width="560" height="315" src="https://www.youtube.com/embed/t9oX38iS5WU?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- 슬라이드를 더 추가하려면 위 reels-swiper-slide 블록을 복사해서 붙여넣으세요. -->
@@ -157,7 +152,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="05reels.js"></script>
 
 
     <!-- ======================================================= -->
@@ -177,13 +171,13 @@
                 <!-- 핫클립 슬라이드 1 (새로운 영상과 ID로 교체) -->
                 <div class="swiper-slide hotclip-video-size">
                     <div class="iframe-container">
-                        <iframe id="hotclip-player1" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="hotclip-player1" width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- 핫클립 슬라이드 2 -->
                 <div class="swiper-slide hotclip-video-size">
                     <div class="iframe-container">
-                        <iframe id="hotclip-player2" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe id="hotclip-player2" width="560" height="315" src="https://www.youtube.com/embed/o95ixi5cz1g?enablejsapi=1&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- ... 필요에 따라 슬라이드를 더 추가 ... -->
@@ -195,12 +189,6 @@
             <div class="hotclip-swiper-pagination"></div>
         </div>
     </div>
-
-    <!-- 기존 스크립트 로드 부분은 그대로 둡니다. -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-
-    <!-- [중요] 핫클립용 JS 파일을 새로 만들거나 인라인 스크립트로 추가합니다. -->
-    <script src="05hotclip.js"></script>
 
     <!-- 🎥 [2] 소개 섹션 -->
     <section class="intro-questions">
@@ -252,45 +240,6 @@
         </div>
     </section>
     <script src="04intro.js"></script>
-
-
-
-    <!-- 초기 인트로 -->
-    <!-- <section class="content-wrapper">
-        <div class="content-inner">
-            <div class="text-block from-left">
-                <div class="questions-text1">Guerrilla Question 1.</div>
-                <div class="questions-text2">'일상'이라는 단어를 생각하면<br>'무엇'이 떠오르나요?</div>
-            </div>
-            <div class="text-block from-left delay">
-                <img src="img/이번주는.png">
-            </div>
-            <div class="three-paragraphs">
-                <div class="text-block from-left"><img src="/img/‘일상’이라는 단어를 생각하면 ‘무엇’이 떠오르시나요_.png"></div>
-                <div class="text-block from-left delay"><img src="/img/게릴라는 ‘일상’하면 ‘즐거움’이 떠올라야한다고 생각합니다. 게릴라가 여러분의 일상에 ‘즐거움’을 더해드리겠습니다 _).png"></div>
-                <div class="text-block from-left delay2"><img src="/img/여러분들이 선택한 소중한 하루 후회하지 않게 준비하겠습니다..png"></div>
-            </div>
-            <div class="image-block from-right">
-                <img src="/img/host.png">
-            </div>
-        </div>
-    </section>
-    <script src="script.js"></script> -->
-
-    <!-- 기존 릴스 영역 -->
-    <!-- <div class="reels-section">
-        <div class="reels-header">
-            <div class="reels-subtitle">게릴라</div>
-            <div class="reels-title">HISTORY</div>
-        </div>
-        <div class="reels-container">
-            <div class="reels-track" id="reelsTrack">
-            </div>
-        </div>
-    </div>
-    <script src="05reels.js"></script> -->
-
-
 
     <!-- 호스트소개 -->
     <div class="host-section">
@@ -362,13 +311,6 @@
         </div>
     </div>
 
-        <!-- 📌 확장 메뉴 항목 (현재 비활성화, 나중에 복구 가능) -->
-        <!--
-        <div class="menu-items">
-            <a href="#contact" class="tab-btn">문의하기</a>
-            <a href="#map" class="tab-btn">오시는 길</a>
-        </div>
-        -->
     <script src="10stickybar.js"></script>
     <script src="03party-cards.js"></script>
 
@@ -434,6 +376,56 @@
             });
 
         });
+
+
+    const animations = [
+        { selector: '.hero-text',       effect: 'animate__bounceIn',      delay: 200 },
+        { selector: '.hero-title',      effect: 'animate__custom-bounceInDown',     delay: 1000 },
+        { selector: '.hero-btn',        effect: 'animate__fadeIn',        delay: 2000 },
+        { selector: '.party-apply-btn', effect: 'animate__fadeInUp',     delay: 2500 }
+    ];
+
+    animations.forEach(anim => {
+        const element = document.querySelector(anim.selector);
+        if (!element) return;
+
+        element.style.opacity = '0';
+
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.classList.add('animate__animated', anim.effect);
+
+            element.addEventListener('animationend', () => {
+                element.classList.remove('animate__animated', anim.effect);
+
+                // ✅ .hero-btn일 경우에만 반복 애니메이션 로직을 실행합니다.
+                if (anim.selector === '.hero-btn') {
+                    
+                    const repeatingEffect = 'animate__custom-boing-right';
+
+                    /**
+                     * ✅ [추가] 통통 튀는 애니메이션을 한 번 실행하는 함수
+                     */
+                    const runBoingAnimation = () => {
+                        // 기존 클래스가 남아있을 수 있으므로 먼저 제거
+                        element.classList.remove('animate__animated', repeatingEffect);
+                        // 강제 리플로우
+                        void element.offsetWidth;
+                        // 애니메이션 클래스 추가
+                        element.classList.add('animate__animated', repeatingEffect);
+                    };
+
+                    // 1. [핵심] fadeIn이 끝나자마자 즉시 한 번 실행합니다.
+                    runBoingAnimation();
+                    
+                    // 2. [핵심] 그 이후부터 2초 간격으로 반복 실행을 설정합니다.
+                    setInterval(runBoingAnimation, 2000); // 2000ms = 2초
+                }
+
+            }, { once: true });
+
+        }, anim.delay);
+    });
     </script>
 </body>
 </html>

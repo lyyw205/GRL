@@ -34,7 +34,7 @@
 
 .video-wrapper {
   /* 1. wrapper는 이제 영상의 '최대 너비'와 '중앙 정렬'만 담당합니다. */
-  max-width: 500px; /* 여기서 영상의 최대 너비를 설정합니다. */
+  max-width: 450px; /* 여기서 영상의 최대 너비를 설정합니다. */
   width: 100%;      /* 기본적으로는 꽉 찬 너비를 가집니다. */
   margin: 0 auto;   /* 중앙 정렬 */
 
@@ -209,4 +209,99 @@
 }
 .delay-3 {
   animation-delay: 1.5s;
+}
+
+/* 
+ ✅ [가장 중요] Animate.css의 bounceInDown을 덮어쓰는 커스텀 애니메이션
+*/
+@keyframes custom-bounceInDown {
+  0% {
+    opacity: 0;
+    /* 시작 높이를 -3000px에서 -100px로 대폭 낮춤 */
+    transform: translateY(-100px) scaleY(0.6); 
+  }
+
+  /* 
+   * 나머지 통통 튀는 부분은 그대로 유지하거나, 
+   * 취향에 맞게 수치를 조금씩 조절할 수 있습니다.
+   */
+  60% {
+    opacity: 1;
+    transform: translateY(25px) scaleY(1);
+  }
+
+  75% {
+    transform: translateY(-10px) scaleY(0.95);
+  }
+
+  90% {
+    transform: translateY(5px) scaleY(0.985);
+  }
+
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+/* 
+ ✅ 커스텀 애니메이션을 사용할 클래스를 만듭니다.
+*/
+.animate__custom-bounceInDown {
+  /* 위에서 만든 @keyframes 애니메이션을 참조합니다. */
+  animation-name: custom-bounceInDown;
+}
+
+/* 
+ ✅ [추가] "오른쪽으로 통통 튀는" 커스텀 애니메이션
+*/
+@keyframes custom-boing-right {
+  /* 시작과 끝은 제자리 */
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  /* 오른쪽으로 살짝 갔다가 */
+  20% {
+    transform: translateX(6px);
+  }
+
+  /* 반대쪽으로 살짝 튕겼다가 */
+  40% {
+    transform: translateX(0px);
+  }
+
+  /* 다시 오른쪽으로 갔다가 */
+  60% {
+    transform: translateX(6px);
+  }
+
+  /* 제자리로 돌아옵니다. */
+  80% {
+    transform: translateX(0px);
+  }
+}
+
+/* 
+ ✅ 이 애니메이션을 실행할 클래스를 만듭니다.
+*/
+.animate__custom-boing-right {
+  animation-name: custom-boing-right;
+  /* transform-origin을 설정하여 움직임의 중심을 잡아줍니다. */
+  transform-origin: center center;
+}
+
+/* 
+ ✅ [가장 중요] 모든 Animate.css 효과의 지속 시간을 우리가 원하는 값으로 통일합니다.
+    이렇게 하면 어떤 효과를 쓰든 항상 동일한 속도로 작동하여 예측이 가능해집니다.
+*/
+.hero-box .animate__animated {
+    animation-duration: 0.7s; /* 0.7초로 설정. 원하는 속도로 조절 가능 */
+}
+
+/* 
+ ✅ [선택적] 특정 애니메이션만 속도를 다르게 하고 싶을 경우 
+    더 구체적인 선택자를 사용하여 덮어쓸 수 있습니다.
+*/
+.hero-box .animate__custom-boing-right {
+    animation-duration: 0.8s; /* 통통 튀는 효과는 약간 더 길게 */
 }
