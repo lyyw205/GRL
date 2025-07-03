@@ -1,0 +1,87 @@
+/* ✅ 폰트 등록 */
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ✅ 릴스 전체 영역 */
+.reels-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0 70px 0; 
+  background-color: #eaeafc;
+  overflow: hidden;
+}
+.reels-container {
+  width: 100%;
+  max-width: 1000px; /* 필요시 원하는 최대 너비 */
+  overflow: hidden;
+  position: relative;
+}
+.reels-header {
+  margin-bottom: 30px;
+}
+
+.reels-subtitle {
+  font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.0rem;
+  color: #A480FD;
+  line-height: 1.2;
+}
+
+.reels-title {
+  font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+/* ✅ 릴스 스와이퍼 */
+.reels-track {
+  display: flex;
+  justify-content: flex-start; /* 중요: 중앙정렬은 JS에서 계산함 */
+  gap: 10px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.reels-track video {
+  height: 40vh;
+  width: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative; /* ✅ ::after 표시용 */
+}
+
+.reels-track video.reels-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+  cursor: default;
+}

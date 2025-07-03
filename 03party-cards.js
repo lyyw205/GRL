@@ -96,7 +96,7 @@ function initSwiper() {
     // 카드 사이의 간격
     spaceBetween: 20,
     // [핵심] 무한 루프는 이 디자인과 잘 어울립니다.
-    loop: true,
+    loop: false,
     // 마우스 커서를 잡는 모양으로 변경
     grabCursor: true,
 
@@ -114,14 +114,34 @@ function initSwiper() {
 
     // [핵심] 반응형 설정
     breakpoints: {
-      // 모바일 화면 (768px 미만)
+      // 모바일 (가장 작은 화면 ~ 479px)
       0: {
-        slidesPerView: 1.5, // 모바일에서는 1.2개만 보여줌
-        spaceBetween: 10,
+        slidesPerView: 1,
+        spaceBetween: 10, // 간격을 조금 더 줘서 답답함 해소
       },
-      // 태블릿/데스크탑 화면 (768px 이상)
+      380: {
+        slidesPerView: 1.5, // 2개는 꽉차고 3번째가 살짝 보이게
+        spaceBetween: 20,
+      },
+
+      // 큰 모바일 (480px ~ 767px)
+      480: {
+        slidesPerView: 1.8, // 2개는 꽉차고 3번째가 살짝 보이게
+        spaceBetween: 20,
+      },
+      // 태블릿 (768px ~ 1023px)
       768: {
         slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      // 작은 데스크탑 (1024px ~ 1279px)
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      // 일반 데스크탑 (1280px 이상)
+      1280: {
+        slidesPerView: 4, // 화면이 넓으니 더 많이 보여줌
         spaceBetween: 20,
       }
     }

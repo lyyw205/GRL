@@ -1,183 +1,74 @@
-const reelsTrack = document.getElementById("reelsTrack");
-const reelsSources = [
-  "/video/reel1.mp4",
-  "/video/reel2.mp4",
-  "/video/reel3.mp4",
-  "/video/reel4.mp4",
-  "/video/reel5.mp4",
-];
+// 1. YouTube Iframe API 스크립트를 비동기적으로 로드합니다.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let reelsCurrentIndex = 0;
-let reelsVisibleCount = 3; // 초기값은 데스크탑 기준
-const MAX_AUTO_PLAY_INDEX = 2;
+// 2. 플레이어 변수들을 준비합니다.
+var players = {}; // 여러 개의 플레이어를 관리할 객체
 
-let startX = 0;
-let isDragging = false;
-let currentTranslate = 0;
-let previousTranslate = 0;
-
-function updateReelsVisibleCount() {
-  const w = window.innerWidth;
-  if (w < 600) reelsVisibleCount = 1;
-  else if (w < 1024) reelsVisibleCount = 2;
-  else reelsVisibleCount = 3;
-}
-
-function renderReelsVideos() {
-  reelsTrack.innerHTML = "";
-
-  reelsSources.forEach((src, i) => {
-    const video = document.createElement("video");
-    video.src = src;
-    video.setAttribute("data-index", i);
-    video.muted = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-
-    video.addEventListener("click", () => {
-      const centerIndex = Math.floor(reelsVisibleCount / 2);
-      reelsCurrentIndex = Math.max(
-        centerIndex,
-        Math.min(i, reelsSources.length - (reelsVisibleCount - centerIndex))
-      );
-
-      updateReelsPosition();
-      playCenterVideo();
+// 3. API 코드가 다운로드되면 이 함수가 실행됩니다.
+function onYouTubeIframeAPIReady() {
+    
+    // [추가] 각 슬라이드에 클릭 가능한 오버레이를 동적으로 추가합니다.
+    document.querySelectorAll('.mySwiper .swiper-slide').forEach(function(slide, index) {
+        var overlay = document.createElement('div');
+        overlay.className = 'slide-click-overlay';
+        // 오버레이에 슬라이드 인덱스를 저장해둡니다.
+        overlay.dataset.slideTo = index;
+        slide.appendChild(overlay);
     });
 
-    reelsTrack.appendChild(video);
-  });
-
-  const firstVideo = reelsTrack.querySelector("video");
-  if (firstVideo) {
-    firstVideo.onloadedmetadata = () => {
-      updateReelsPosition();
-      // playCenterVideo();
-    };
-  }
-}
-
-function updateReelsPosition() {
-  const videos = reelsTrack.querySelectorAll("video");
-  if (!videos.length) return;
-
-  const videoWidth = videos[0].offsetWidth;
-  const style = window.getComputedStyle(videos[0]);
-  const gap = parseInt(style.marginRight || 30);
-  const fullItemWidth = videoWidth + gap;
-
-  const container = reelsTrack.parentElement;
-  const containerWidth = container.offsetWidth;
-  const centerOfContainer = containerWidth / 2;
-
-  const positionOfCurrentVideo = (reelsCurrentIndex + 0.5) * fullItemWidth;
-  const translateX = centerOfContainer - positionOfCurrentVideo;
-
-  reelsTrack.style.transition = "transform 0.5s ease";
-  reelsTrack.style.transform = `translateX(${translateX}px)`;
-
-  videos.forEach(v => v.classList.remove("reels-active"));
-  videos[reelsCurrentIndex]?.classList.add("reels-active");
-
-  // 드래그 기준값 저장
-  previousTranslate = translateX;
-
-  // 디버깅
-  console.log("🎯 translateX:", translateX);
-}
-
-function playCenterVideo() {
-  const videos = reelsTrack.querySelectorAll("video");
-  videos.forEach(v => {
-    v.pause();
-    v.currentTime = 0;
-  });
-
-  const currentVideo = videos[reelsCurrentIndex];
-  if (!currentVideo || !document.body.contains(currentVideo)) return;
-
-  if (reelsCurrentIndex <= MAX_AUTO_PLAY_INDEX) {
-    currentVideo.play().catch(err => {
-      console.warn("⚠️ video play() interrupted:", err.message);
+    // 4. Swiper를 초기화합니다.
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1.3,
+        centeredSlides: true,
+        spaceBetween: -15,
+        loop: false, // loop: false 모드이므로 slideToLoop 대신 slideTo를 사용합니다.
+        pagination: {
+            el: ".reels-swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".reels-swiper-button-next",
+            prevEl: ".reels-swiper-button-prev",
+        },
+        breakpoints: {
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1024: { slidesPerView: 3, spaceBetween: 50 },
+        },
+        on: {
+            // 슬라이드가 변경된 직후 실행
+            slideChangeTransitionEnd: function () {
+                // 모든 비디오를 순회하며 정지
+                Object.values(players).forEach(player => {
+                    // 플레이어가 로드되었고, 재생 중일 때만 정지 명령을 보냅니다.
+                    if (player && typeof player.pauseVideo === 'function' && player.getPlayerState() === 1) {
+                        player.pauseVideo();
+                    }
+                });
+            },
+        },
     });
-  }
 
-  currentVideo.onended = () => {
-    if (reelsCurrentIndex < reelsSources.length - 1) {
-      reelsCurrentIndex++;
-      updateReelsPosition();
-      playCenterVideo();
-    }
-  };
-}
-
-// 👉 터치 드래그 처리
-reelsTrack.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  isDragging = true;
-
-  const transform = getComputedStyle(reelsTrack).transform;
-  if (transform !== "none") {
-    const matrix = new WebKitCSSMatrix(transform);
-    previousTranslate = matrix.m41;
-  } else {
-    previousTranslate = 0;
-  }
-
-  reelsTrack.style.transition = "none";
-}, { passive: true });
-
-reelsTrack.addEventListener("touchmove", (e) => {
-  if (!isDragging) return;
-
-  const currentX = e.touches[0].clientX;
-  const deltaX = currentX - startX;
-
-  currentTranslate = previousTranslate + deltaX;
-  reelsTrack.style.transform = `translateX(${currentTranslate}px)`;
-}, { passive: true });
-
-reelsTrack.addEventListener("touchend", (e) => {
-  isDragging = false;
-
-  const endX = e.changedTouches[0].clientX;
-  const deltaX = endX - startX;
-  const swipeThreshold = 50;
-
-  if (deltaX > swipeThreshold && reelsCurrentIndex > 0) {
-    reelsCurrentIndex--;
-  } else if (deltaX < -swipeThreshold && reelsCurrentIndex < reelsSources.length - 1) {
-    reelsCurrentIndex++;
-  }
-
-  updateReelsPosition();  // 중앙 정렬로 스냅
-  // playCenterVideo();      // 새 비디오 재생
-});
-// 2. intersection 감시
-const reelsSection = document.getElementById("reelsSection");
-if (reelsSection) {
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasStartedReels) {
-        hasStartedReels = true;
-        console.log("🎬 리일 화면 진입: 재생 시작");
-        playCenterVideo(); // ⏯️ 첫 비디오 재생 시작
-        observer.disconnect(); // 감시 해제
-      }
+    // 5. 각 슬라이드의 iframe에 대해 YouTube 플레이어 객체를 생성합니다.
+    var iframes = document.querySelectorAll('.mySwiper iframe');
+    iframes.forEach(function(iframe) {
+        if (iframe.id) { // id가 있는 iframe만 플레이어로 만듭니다.
+            players[iframe.id] = new YT.Player(iframe.id);
+        }
     });
-  }, {
-    threshold: 0.5,
-  });
 
-  observer.observe(reelsSection);
+    // 6. [핵심] 오버레이 클릭 이벤트 처리
+    document.querySelector('.mySwiper .swiper-wrapper').addEventListener('click', function (e) {
+        // 클릭된 요소가 오버레이인지 확인
+        if (e.target.classList.contains('slide-click-overlay')) {
+            // 오버레이에 저장해둔 슬라이드 인덱스를 가져옵니다.
+            var slideToIndex = e.target.dataset.slideTo;
+            if (slideToIndex !== undefined) {
+                // Swiper를 해당 슬라이드로 이동 (loop: false이므로 slideTo 사용)
+                swiper.slideTo(slideToIndex);
+            }
+        }
+    });
 }
-
-// 반응형
-window.addEventListener("resize", () => {
-  updateReelsVisibleCount();
-  updateReelsPosition();
-});
-
-// 초기 실행
-updateReelsVisibleCount();
-renderReelsVideos();
