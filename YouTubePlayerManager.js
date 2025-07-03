@@ -95,8 +95,23 @@
                 slide.appendChild(overlay);
             });
             container.querySelectorAll('iframe').forEach(iframe => {
-                if (iframe.id && !componentData.players[iframe.id]) {
-                    componentData.players[iframe.id] = new YT.Player(iframe.id);
+                if (iframe.id) {
+                    try {
+                        console.log(`Trying to create player for #${iframe.id}`); // <--- 추가
+                    // new YT.Player()를 호출하되, 바로 할당하지 않습니다.
+                        new YT.Player(iframe.id, {
+                            events: {
+                                // 'onReady' 이벤트가 발생하면, 즉 플레이어가 진짜로 준비되면
+                                // 그 때 componentData.players 객체에 추가합니다.
+                                'onReady': function(event) {
+                                    console.log(iframe.id + ' is ready!');
+                                    componentData.players[iframe.id] = event.target;
+                                }
+                            }
+                        });
+                    } catch (e) {
+                        console.error(`Failed to create player for #${iframe.id}:`, e); // <--- 추가
+                    }
                 }
             });
             const swiperOptions = {
@@ -105,6 +120,8 @@
                 navigation: { nextEl: config.navigation.nextEl, prevEl: config.navigation.prevEl },
                 on: {
                     slideChangeTransitionEnd: (swiper) => {
+                        console.log('Slide changed! Event handler is working.');
+                        console.log('Players object to check:', componentData.players); 
                         Object.values(componentData.players).forEach(player => {
                             if (player && typeof player.pauseVideo === 'function' && player.getPlayerState() === YT.PlayerState.PLAYING) {
                                 player.pauseVideo();

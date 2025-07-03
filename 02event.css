@@ -87,11 +87,38 @@
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
   font-size: 1.2rem;
   line-height: 1.4;
-  margin: 40px 0 80px 0;
+  margin: 40px 0 50px 0;
 }
 
 .discount {
   font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
   font-size: 1.5rem;
   color: #7257b6;
+}
+
+.event-section-box4 {
+  background-color: #fff1f1;
+  text-align: left;
+  width: 90%;
+  max-width: 350px;
+  padding: 35px 0 30px 20px;
+  border-radius: 20px;
+  margin: 0 0 50px 0;
+}
+.event-section-title-box4 {
+  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+.event-section-text-box4 {
+  font-family:'GangwonEduSaeeum_OTFMediumA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.event-day {
+    font-size: 24px;
+    font-weight: bold;
+    color: #bd4c4c;
 }
