@@ -171,7 +171,7 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 /* [수정] 페이지네이션에만 스타일이 적용되도록 명확히 지정 */

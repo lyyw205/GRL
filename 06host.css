@@ -85,5 +85,34 @@
 .location-image {
   width: 90%;
   max-width: 500px;
-  margin-bottom: 90px;
+}
+
+.location-info {
+  margin: 50px;
+  background-color: #e9e9f8;
+  width: 90%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 10px
+}
+
+.location-info-text1 {
+  font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.0rem;
+  line-height: 1.2;
+  color: #8353ff;
+  margin-bottom: 10px;
+}
+
+.location-info-text2 {
+  font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.location-info-text3 {
+  font-family: 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }

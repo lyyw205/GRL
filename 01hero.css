@@ -118,11 +118,10 @@
   margin: 0 15px;
   color: #ffffff;
   background-color: transparent;
-  padding: 5px 20px;
+  padding: 0px 20px;
 }
 .mainbtn:hover {
   border-radius: 20px;
-  padding: 5px 20px;
   background-color: white;
   color: black;
 }
@@ -136,10 +135,16 @@
   color: #fff;
   padding: 15px 30px 6px 30px;
   margin-top: 80px;
+  cursor: pointer;
 }
 .party-apply-btn-only {
   text-decoration: none;
   color: #fff;
+}
+
+.party-apply-btn:hover {
+  background-color: #fff;
+  color: black;
 }
 
 .hot {
