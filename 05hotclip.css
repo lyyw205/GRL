@@ -135,3 +135,10 @@
     transform: scale(1);
     opacity: 1;
 }
+
+.hotclip-notice {
+    font-family: 'GangwonEduSaeeum_OTFMediumA';
+    font-size: 18px;
+    color: #444444;
+    margin-top: 5px;
+}
