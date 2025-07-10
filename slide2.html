@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 쇼츠 슬라이더</title>
+
+    <!-- 1. Swiper.js CSS CDN 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <style>
+        /* 기본 스타일 초기화 및 레이아웃 */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        /* 2. 슬라이더 컨테이너 스타일 */
+        .swiper {
+            width: 100%;
+            max-width: 1200px; /* PC에서 최대 너비 제한 */
+            padding-top: 50px; /* 상단 여백 (페이지네이션 공간) */
+            padding-bottom: 50px; /* 하단 여백 (네비게이션 버튼 공간) */
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 3. 반응형 iframe을 위한 스타일 (가장 중요!) */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            /* 쇼츠 영상 비율 (9:16) -> 16 / 9 * 100 = 177.77% */
+            /* 또는 최신 CSS aspect-ratio 속성 사용 */
+            aspect-ratio: 9 / 16;
+            max-width: 315px; /* 쇼츠의 기본 너비 정도로 최대 크기 제한 */
+            margin: 0 auto; /* 슬라이드 내에서 중앙 정렬 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden; /* 둥근 모서리를 위해 iframe을 잘라냄 */
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Swiper.js 네비게이션/페이지네이션 버튼 색상 변경 */
+        :root {
+            --swiper-navigation-color: #000;
+            --swiper-pagination-color: #000;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>유튜브 쇼츠 슬라이더</h1>
+
+    <!-- 4. Swiper HTML 구조 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- 슬라이드 1 -->
+        <div class="swiper-slide">
+            <div class="iframe-container">
+                <!-- 여기에 첫 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/f0zWOIc54Sc?si=FajFKRpBBYQK3Fux" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+        </div>
+        <!-- 슬라이드 2 -->
+        <div class="swiper-slide">
+            <div class="iframe-container">
+                <!-- 여기에 두 번째 쇼츠 iframe을 넣습니다. VIDEO_ID를 교체하세요. -->
+                <iframe src="https://www.youtube.com/embed/5aY0_3T-d2g" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- 슬라이드 3 -->
+        <div class="swiper-slide">
+            <div class="iframe-container">
+                <iframe src="https://www.youtube.com/embed/a3ICNMQW7Ok" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- 슬라이드 4 -->
+        <div class="swiper-slide">
+            <div class="iframe-container">
+                <iframe src="https://www.youtube.com/embed/R-tU3t5gN58" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- 슬라이드를 더 추가하려면 위 swiper-slide 블록을 복사해서 붙여넣으세요. -->
+      </div>
+      <!-- 좌/우 버튼 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- 페이지네이션 (점) -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 5. Swiper.js JS CDN 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 6. Swiper 초기화 스크립트 -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        // 한 번에 보여줄 슬라이드 수
+        slidesPerView: 1,
+        // 슬라이드 간의 간격
+        spaceBetween: 30,
+        // 무한 루프
+        loop: true,
+        // 페이지네이션 설정
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // 네비게이션 버튼 설정
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        // 반응형 설정
+        breakpoints: {
+          // 화면 너비가 768px 이상일 때
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          // 화면 너비가 1024px 이상일 때
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        },
+      });
+    </script>
+
+</body>
+</html>
