@@ -3,12 +3,30 @@
 (function(window, document) {
     'use strict';
 
-        // --- ✅ [추가] 공통 onReady 핸들러 함수 ---
-    // 플레이어가 준비되었을 때 공통적으로 처리할 로직 (화질 설정 등)
     function onPlayerReady_common(event) {
-        // 이 부분이 화질을 가능한 가장 높은 것으로 설정하는 코드입니다.
-        event.target.setPlaybackQuality('highres');
-        console.log(`Player ${event.target.getIframe().id} is ready. Set quality to highres.`);
+        const player = event.target;
+        const iframe = player.getIframe();
+        const videoTitle = iframe.title || iframe.id;
+
+        // 1. 영상이 지원하는 모든 화질 목록을 가져옵니다.
+        const availableQualities = player.getAvailableQualityLevels();
+        console.log(`[정보] Player '${videoTitle}' 지원 화질 목록:`, availableQualities);
+
+        // ✅ [수정] 1080p 또는 720p가 있을 때만 화질을 설정합니다.
+        if (availableQualities && availableQualities.length > 0) {
+            if (availableQualities.includes('hd1080')) {
+                // 1순위: 1080p가 있다면, 1080p로 설정
+                player.setPlaybackQuality('hd1080');
+                console.log(`[설정] 1080p를 지원하여 'hd1080'으로 설정했습니다.`);
+            } else if (availableQualities.includes('hd720')) {
+                // 2순위: 1080p는 없지만 720p가 있다면, 720p로 설정
+                player.setPlaybackQuality('hd720');
+                console.log(`[설정] 1080p는 없지만 720p를 지원하여 'hd720'으로 설정했습니다.`);
+            } else {
+                // 3순위: 둘 다 없으면, 아무것도 하지 않고 유튜브 기본값(자동)을 따릅니다.
+                console.log(`[알림] 1080p/720p를 지원하지 않아, 화질을 별도로 설정하지 않습니다.`);
+            }
+        }
     }
 
     const YouTubePlayerManager = {
