@@ -3,6 +3,14 @@
 (function(window, document) {
     'use strict';
 
+        // --- ✅ [추가] 공통 onReady 핸들러 함수 ---
+    // 플레이어가 준비되었을 때 공통적으로 처리할 로직 (화질 설정 등)
+    function onPlayerReady_common(event) {
+        // 이 부분이 화질을 가능한 가장 높은 것으로 설정하는 코드입니다.
+        event.target.setPlaybackQuality('highres');
+        console.log(`Player ${event.target.getIframe().id} is ready. Set quality to highres.`);
+    }
+
     const YouTubePlayerManager = {
         isApiReady: false,
         isApiLoading: false,
@@ -59,6 +67,7 @@
             const player = new YT.Player(playerId, {
                 events: {
                     'onReady': function(event) {
+                        onPlayerReady_common(event); // 공통 핸들러 호출
                         componentData.players[playerId] = event.target;
                     }
                 }
@@ -104,6 +113,7 @@
                                 // 'onReady' 이벤트가 발생하면, 즉 플레이어가 진짜로 준비되면
                                 // 그 때 componentData.players 객체에 추가합니다.
                                 'onReady': function(event) {
+                                    onPlayerReady_common(event);
                                     console.log(iframe.id + ' is ready!');
                                     componentData.players[iframe.id] = event.target;
                                 }
