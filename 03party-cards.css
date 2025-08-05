@@ -4,6 +4,9 @@
  * =======================================================
  */
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+
 /* 1. 슬라이더 전체 컨테이너 설정 */
 .swiper-section {
   background-color: #F5F8FF;
@@ -73,34 +76,33 @@
 }
 
 .party-time {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
   color: #666;
-  font-family: 'GangwonEdu_OTFBoldA', "Gamja Flower", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family:'GangwonEduSaeeum_OTFMediumA', "Gamja Flower", sans-serif;
+  font-weight: 500;
+  padding-left: 3px;
 }
 
 .party-date {
   font-size: 30px;
-  padding-top: 12px;
-  line-height: 0.6;
+  line-height: 0.9;
   color: #000;
-  font-family:'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
-  font-weight: 400;
+  font-family: 'Pretendard Variable', 'GangwonEduPowerExtraBoldA', "Jua", "Black Han Sans", sans-serif;
+  font-weight: 700;
 }
 
 .party-count {
-  font-family:'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
+  font-family:  'GangwonEduSaeeum_OTFMediumA', "Jua", Arial, Helvetica, sans-serif;
   font-size: 21px;
-  font-weight: normal;
+  font-weight: 500;
   color: #000000;
-  margin: 30px 0 5px 0;
+  margin: 30px 0 0 0;
   line-height: 1.0;
 }
 .party-sex {
-  font-family: 'GangwonEdu_OTFBoldA', "Jua", Arial, Helvetica, sans-serif;
-  font-size: 21px;
+  font-family:  'Pretendard Variable', 'GangwonEdu_OTFBoldA', "Jua", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -108,7 +110,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 25px;
+  margin-top: 45px;
   margin-bottom: 10px;
 }
 
@@ -117,7 +119,7 @@
   color: rgb(0, 0, 0);
   padding: 9px 16px 4px;
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'GangwonEduSaeeum_OTFMediumA', "Jua", Arial, Helvetica, sans-serif;
   font-weight: lighter;
   line-height: 1.0;
@@ -132,36 +134,41 @@
 }
 
 .timer-label {
-  font-family: 'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
-  font-size: 18px;
+  font-family: 'Pretendard Variable','GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   color: #000000;
-  line-height: 0.5;
-  margin-top: 20px;
+  line-height: 1.0;
+  margin-top: 15px;
+  padding-left: 2px;
 }
 
 .timer-count {
   font-size: 30px;
-  font-family: 'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
-  padding-top: 12px;
-  line-height: 0.6;
-  font-weight: bold;
+  font-family: 'Pretendard Variable','GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
+  padding-top: 4px;
+  font-weight: 800;
   color: #000000;
-  margin-top: 4px;
   line-height: 1.0;
 }
 
 
 .cta-button {
-  font-family: 'GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
-  font-size: 18px;
   display: inline-block;
   margin-top: 12px;
-  padding: 20px 16px 10px;
+  height: 45px;
+  font-weight: 700;
   background: #000000;
   color: white;
   text-align: center;
+  align-content: center;
   text-decoration: none;
   border-radius: 30px;
+}
+
+.cta-button-text {
+  font-family: 'Pretendard Variable','GangwonEduPowerExtraBoldA', "Jua", Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 
