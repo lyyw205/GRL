@@ -10,7 +10,7 @@ async function loadCards() {
   const { data, error } = await client
     .from("party_cards")
     .select("*")
-    .order("title", { ascending: true });
+    .order("title", { ascending: false });
 
   if (error) {
     console.error("❌ Supabase 오류:", error);
