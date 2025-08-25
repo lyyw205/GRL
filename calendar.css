@@ -102,6 +102,7 @@
 }
 
 .calendar-days div {
+    font-family: 'Pretendard Variable', sans-serif;
     position: relative;
     display: flex;
     justify-content: center;
@@ -252,6 +253,7 @@
 
 /* D-Day, 마감 라벨 스타일 */
 .event-label {
+    font-family: 'Pretendard Variable', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     color: #333;
