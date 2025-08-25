@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="10stickybar.css">
     <link rel="stylesheet" href="05reels.css">
     <link rel="stylesheet" href="05hotclip.css">
+    <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
@@ -135,8 +136,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </section>
     </section>
-
+    <script src="supabase-client.js"></script>
+    <script src="03party-cards.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+    <section class="calendar-section">
+        <div class="calendar-section-header">
+            <div class="calendar-section-text">
+                <div class="calendar-section-text-subtitle">게릴라</div>
+                <div class="calendar-section-text-title">파티 캘린더</div>
+            </div>
+        </div>
+
+        <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+        <!--     아래에 새로운 wrapper div를 추가합니다     -->
+        <!-- ★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+        <div class="calendar-widget-wrapper">
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+                    <div id="month-year"></div>
+                    <button id="next-month-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
+                </div>
+                <div class="calendar-days" id="calendar-days"></div>
+            </div>
+
+            <div id="schedule-container">
+                <div id="default-event-box" class="info-box">
+                    <div id="default-event-list">
+                        <!-- 로딩 스피너 또는 메시지 -->
+                        <p>일정을 불러오는 중입니다...</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div> <!-- ★★★ wrapper div의 닫는 태그 ★★★ -->
+
+    </section>
+
+    <script src="calendar.js"></script>
+
 
     <div class="shorts-swiper">
         <div class="shorts-section">
@@ -149,6 +196,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- 4. Swiper HTML 구조 -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player16" width="560" height="315" src="https://www.youtube.com/embed/j6jj4QpBMdk?enablejsapi=1&controls=0&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-controls=0&origin-when-cross-controls=0&origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="swiper-slide shorts-video-size">
+                    <div class="iframe-container">
+                        <iframe id="player15" width="560" height="315" src="https://www.youtube.com/embed/b065CHwApy8?enablejsapi=1&controls=0&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-controls=0&origin-when-cross-controls=0&origin" allowfullscreen></iframe>
+                    </div>
+                </div>
                 <div class="swiper-slide shorts-video-size">
                     <div class="iframe-container">
                         <iframe id="player14" width="560" height="315" src="https://www.youtube.com/embed/7yRJlLPhb20?enablejsapi=1&controls=0&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-controls=0&origin-when-cross-controls=0&origin" allowfullscreen></iframe>
@@ -246,6 +303,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Swiper HTML 구조 (클래스명 변경) -->
         <div class="swiper hotclipSwiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide hotclip-video-size">
+                    <div class="iframe-container">
+                        <iframe id="hotclip-player7" width="560" height="315" src="https://www.youtube.com/embed/VDLbNrh8uaA?enablejsapi=1&controls=0&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-controls=0&origin-when-cross-controls=0&origin" allowfullscreen></iframe>
+                    </div>
+                </div>
                 <div class="swiper-slide hotclip-video-size">
                     <div class="iframe-container">
                         <iframe id="hotclip-player6" width="560" height="315" src="https://www.youtube.com/embed/kh4cia5Z5fI?enablejsapi=1&controls=0&origin=https://grl.netlify.app" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-controls=0&origin-when-cross-controls=0&origin" allowfullscreen></iframe>
@@ -414,7 +476,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script src="10stickybar.js"></script>
-    <script src="03party-cards.js"></script>
 
         <!-- Swiper 라이브러리는 필요하므로 그대로 둡니다. -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
