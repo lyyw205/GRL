@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   background-color: #f3f3f3;
-  padding-bottom: 60px;
+  padding: 0 15px 60px 15px;
 }
 
 .calendar-section-header {
@@ -71,6 +71,7 @@
 }
 
 #month-year {
+    font-family: 'Pretendard Variable', sans-serif;
     font-size: 1.1rem;
 }
 
@@ -133,6 +134,7 @@
 }
 
 .calendar-days div.event-day::after {
+    font-family: 'Pretendard Variable', sans-serif;
     content: '';
     position: absolute;
     
@@ -266,6 +268,7 @@
 
 /* 이벤트 설명 텍스트 스타일 */
 .event-description {
+    font-family: 'Pretendard Variable', sans-serif;
     font-size: 1rem;
     color: #333;
     line-height: 1.5; /* 줄간격을 줘서 가독성 향상 */
