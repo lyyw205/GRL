@@ -8,7 +8,7 @@ async function loadCards() {
     .from("party_cards")
     .select("*")
     .not("title", "is", null) // ★★★ title이 null이 아닌 데이터만 선택
-    .order("title", { ascending: false });
+    .order("title", { ascending: true });
 
   if (error) {
     console.error("❌ Supabase 오류:", error);
