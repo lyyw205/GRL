@@ -40,9 +40,9 @@ data.forEach(item => {
         ${item.location.split(',').map(tag => `<div class="location-tag">${tag.trim()}</div>`).join('')}
       </div>
       <div class="divider"></div>
-      <div class="timer-label">사전할인 종료까지</div>
+      <div class="timer-label">파티 시작까지</div>
       <div class="timer-count" data-deadline="${item.deadline}">00:00:00</div>
-      <a href="${item.form_url}" class="cta-button" target="_blank">사전할인받고 신청하기</a>
+      <a href="${item.form_url}" class="cta-button" target="_blank">할인받고 신청하기</a>
     </div>
   `;
   wrapper.appendChild(slide);
