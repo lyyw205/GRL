@@ -112,8 +112,69 @@
         },
         
         initYouTubeSwiper: function(container, componentData) {
-            // Swiper 로직은 변경 없음
             const config = componentData.config;
+
+            // [추가] 슬라이드 내의 플레이어를 필요할 때 생성하는 함수
+            const createPlayerForSlideIfNeeded = (slide) => {
+                const iframe = slide.querySelector('iframe');
+                // iframe이 없거나, id가 없거나, 이미 플레이어가 초기화된 경우 함수 종료
+                if (!iframe || !iframe.id || iframe.dataset.playerInitialized === 'true') {
+                    return;
+                }
+
+                console.log(`[지연로딩] Player 생성을 시도합니다: #${iframe.id}`);
+                
+                try {
+                    new YT.Player(iframe.id, {
+                        events: {
+                            'onReady': function(event) {
+                                onPlayerReady_common(event);
+                                console.log(`[지연로딩] Player 준비 완료: ${iframe.id}`);
+                                componentData.players[iframe.id] = event.target;
+                            }
+                        }
+                    });
+                    // 플레이어 초기화를 마쳤다는 플래그를 설정
+                    iframe.dataset.playerInitialized = 'true';
+                } catch (e) {
+                    console.error(`[지연로딩] Player 생성 실패: #${iframe.id}:`, e);
+                }
+            };
+
+            const swiperOptions = {
+                ...config.options,
+                pagination: { el: config.pagination, clickable: true },
+                navigation: { nextEl: config.navigation.nextEl, prevEl: config.navigation.prevEl },
+                on: {
+                    // [핵심 1] Swiper 초기화가 완료된 직후 실행
+                    init: (swiper) => {
+                        console.log('[Swiper] 초기화 완료. 첫 번째 슬라이드 플레이어를 로딩합니다.');
+                        // 첫 번째(활성) 슬라이드의 플레이어만 생성
+                        const initialSlide = swiper.slides[swiper.activeIndex];
+                        createPlayerForSlideIfNeeded(initialSlide);
+                    },
+                    // [핵심 2] 슬라이드 변경이 끝난 후 실행
+                    slideChangeTransitionEnd: (swiper) => {
+                        console.log('[Swiper] 슬라이드 변경 완료.');
+                        
+                        // 모든 플레이어를 일단 정지 (기존 로직)
+                        Object.values(componentData.players).forEach(player => {
+                            if (player && typeof player.pauseVideo === 'function' && player.getPlayerState() === YT.PlayerState.PLAYING) {
+                                player.pauseVideo();
+                            }
+                        });
+
+                        // 새로 활성화된 슬라이드의 플레이어를 생성
+                        const newActiveSlide = swiper.slides[swiper.activeIndex];
+                        createPlayerForSlideIfNeeded(newActiveSlide);
+                    }
+                }
+            };
+
+            // Swiper 인스턴스 생성
+            const swiper = new Swiper(config.selector, swiperOptions);
+            
+            // 클릭 오버레이 로직은 유지 (슬라이드 이동 기능)
             container.querySelectorAll('.swiper-slide').forEach((slide, index) => {
                 if (slide.querySelector('.slide-click-overlay')) return;
                 const overlay = document.createElement('div');
@@ -121,44 +182,6 @@
                 overlay.dataset.slideTo = index;
                 slide.appendChild(overlay);
             });
-            container.querySelectorAll('iframe').forEach(iframe => {
-                if (iframe.id) {
-                    try {
-                        console.log(`Trying to create player for #${iframe.id}`); // <--- 추가
-                    // new YT.Player()를 호출하되, 바로 할당하지 않습니다.
-                        new YT.Player(iframe.id, {
-                            events: {
-                                // 'onReady' 이벤트가 발생하면, 즉 플레이어가 진짜로 준비되면
-                                // 그 때 componentData.players 객체에 추가합니다.
-                                'onReady': function(event) {
-                                    onPlayerReady_common(event);
-                                    console.log(iframe.id + ' is ready!');
-                                    componentData.players[iframe.id] = event.target;
-                                }
-                            }
-                        });
-                    } catch (e) {
-                        console.error(`Failed to create player for #${iframe.id}:`, e); // <--- 추가
-                    }
-                }
-            });
-            const swiperOptions = {
-                ...config.options,
-                pagination: { el: config.pagination, clickable: true },
-                navigation: { nextEl: config.navigation.nextEl, prevEl: config.navigation.prevEl },
-                on: {
-                    slideChangeTransitionEnd: (swiper) => {
-                        console.log('Slide changed! Event handler is working.');
-                        console.log('Players object to check:', componentData.players); 
-                        Object.values(componentData.players).forEach(player => {
-                            if (player && typeof player.pauseVideo === 'function' && player.getPlayerState() === YT.PlayerState.PLAYING) {
-                                player.pauseVideo();
-                            }
-                        });
-                    }
-                }
-            };
-            const swiper = new Swiper(config.selector, swiperOptions);
             const wrapper = container.querySelector('.swiper-wrapper');
             if (wrapper) {
                 wrapper.addEventListener('click', (e) => {

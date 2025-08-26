@@ -323,7 +323,7 @@
 /* 스크롤 다운 화살표를 담는 컨테이너 */
 .scroll-down-container {
   position: absolute; /* hero 섹션 기준으로 위치 지정 */
-  bottom: 30px;       /* 화면 하단에서 30px 위 */
+  bottom: 80px;       /* 화면 하단에서 30px 위 */
   left: 50%;          /* 수평 중앙 정렬 */
   transform: translateX(-50%);
   z-index: 10;        /* 다른 요소들 위에 보이도록 */

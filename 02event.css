@@ -29,6 +29,7 @@
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
 .event-header {
   display: flex;
   flex-direction: row;
@@ -118,7 +119,7 @@
   line-height: 1.2;
 }
 
-.event-day {
+.event-date {
     font-size: 24px;
     font-weight: bold;
     color: #bd4c4c;

@@ -1,7 +1,4 @@
-const client = supabase.createClient(
-  "https://wqxmvqqkbxiykiotbusd.supabase.co",      // ← 너의 Supabase URL
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxeG12cXFrYnhpeWtpb3RidXNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0NDcyOTYsImV4cCI6MjA2NDAyMzI5Nn0.RmB92YtjLPMx4tkQibuRVT_T4DL3_O8Pny3ZA9DU0tk"                   // ← 너의 Public 키
-);
+
 
 console.log("✅ Supabase 연결 시작");
 
@@ -10,6 +7,7 @@ async function loadCards() {
   const { data, error } = await client
     .from("party_cards")
     .select("*")
+    .not("title", "is", null) // ★★★ title이 null이 아닌 데이터만 선택
     .order("title", { ascending: true });
 
   if (error) {
